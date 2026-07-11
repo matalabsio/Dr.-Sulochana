@@ -6,9 +6,9 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import { journeySection as journeyBase } from "@/content/landing";
 import { useMessages } from "@/i18n/LanguageProvider";
 
-/** Horizontal wave connecting four steps (desktop) */
+/** Horizontal wave connecting five steps (desktop) */
 const WAVE_PATH_DESKTOP =
-  "M 0 48 C 120 12 200 84 320 48 S 520 12 640 48 S 840 84 960 48 L 1000 48";
+  "M 0 48 C 80 12 140 84 200 48 S 360 12 400 48 S 560 84 600 48 S 760 12 800 48 S 920 84 1000 48";
 
 const WAVE_SOFT = "rgba(110, 63, 115, 0.12)";
 const WAVE_LINE = "#6D3FA9";
@@ -54,15 +54,6 @@ export default function HowItWorks() {
       className="journey-wavy-section scroll-mt-[var(--nav-height)]"
       aria-labelledby="journey-heading"
     >
-      <div className="journey-wavy-bg" aria-hidden>
-        <svg className="journey-wavy-bg-top" viewBox="0 0 1440 48" preserveAspectRatio="none">
-          <path
-            fill="currentColor"
-            d="M0,24 C360,48 720,0 1080,24 1440,8 L1440,48 L0,48 Z"
-          />
-        </svg>
-      </div>
-
       <div className="journey-wavy-inner relative z-10">
         <div className="journey-wavy-panel relative overflow-visible">
           <ScrollReveal y={24} duration={0.7}>
@@ -86,7 +77,7 @@ export default function HowItWorks() {
               duration={0.7}
             >
               {/* Desktop — horizontal wavy timeline */}
-              <div className="journey-wave-desktop hidden md:block">
+              <div className="journey-wave-desktop hidden lg:block">
                 <div className="journey-wave-svg-track" aria-hidden>
                   <svg viewBox="0 0 1000 96" preserveAspectRatio="none" className="h-full w-full">
                     <path
@@ -106,9 +97,9 @@ export default function HowItWorks() {
                       strokeLinecap="round"
                     />
                     {[
-                      { cx: 250, cy: 58.4 },
-                      { cx: 500, cy: 21.5 },
-                      { cx: 750, cy: 72 },
+                      { cx: 240, cy: 58.4 },
+                      { cx: 490, cy: 21.5 },
+                      { cx: 740, cy: 72 },
                     ].map((point, i) => (
                       <g
                         key={point.cx}
@@ -150,7 +141,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Mobile — vertical step timeline */}
-              <ol className="journey-steps-mobile md:hidden" aria-label={title}>
+              <ol className="journey-steps-mobile lg:hidden" aria-label={title}>
                 {steps.map(({ step, title: stepTitle, desc, icon: Icon }, index) => (
                   <li key={step} data-journey-step className="journey-steps-mobile-item">
                     <div className="journey-steps-mobile-track" aria-hidden>

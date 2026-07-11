@@ -1,15 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import BrandLogo from "@/components/brand/BrandLogo";
-import { Award, Calendar, Heart, MapPin, Phone, Star } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { doctor } from "@/content/doctor";
 import { useLocalizedFooter } from "@/i18n/useLocalizedFooter";
-import {
-  buildContactUrl,
-  trackBookAppointmentClick,
-  trackPhoneClick,
-} from "@/lib/analytics";
+import { trackPhoneClick } from "@/lib/analytics";
 
 function SocialIcon({ label }: { label: string }) {
   const common = "h-[18px] w-[18px]";
@@ -42,13 +37,6 @@ function SocialIcon({ label }: { label: string }) {
     default:
       return null;
   }
-}
-
-function TrustBadgeIcon({ icon }: { icon: "star" | "award" | "families" }) {
-  const cls = "h-4 w-4 shrink-0 text-white";
-  if (icon === "star") return <Star className={cls} fill="currentColor" strokeWidth={0} />;
-  if (icon === "award") return <Award className={cls} strokeWidth={1.75} />;
-  return <Heart className={cls} fill="currentColor" strokeWidth={0} />;
 }
 
 function NavGroup({
@@ -88,12 +76,9 @@ function NavGroup({
 export default function Footer() {
   const {
     brandName,
-    mission,
-    trustBadges,
     contact,
     nav,
     social,
-    bookCta,
     contactTitle,
     copyrightSuffix,
     groupTitles,
@@ -106,52 +91,7 @@ export default function Footer() {
         <span className="premium-footer-watermark-text">{brandName}</span>
       </div>
 
-      {/* Brand card floats above footer edge */}
-      <div className="premium-footer-float-wrap relative z-20">
-        <div className="mx-auto max-w-container px-4 sm:px-6 md:px-10 lg:px-12">
-          <div className="premium-footer-brand-float">
-            <Link href="/" className="premium-footer-logo-link shrink-0">
-              <BrandLogo
-                variant="onDark"
-                className="brand-logo-img--footer"
-              />
-            </Link>
-
-            <div className="premium-footer-brand-copy min-w-0 flex-1">
-              <Link href="/" className="premium-footer-hospital-name">
-                {brandName}
-              </Link>
-              <p className="premium-footer-mission">{mission}</p>
-              <ul className="premium-footer-badges">
-                {trustBadges.map((b) => (
-                  <li key={b.label} className="premium-footer-badge">
-                    <TrustBadgeIcon icon={b.icon} />
-                    <span>{b.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="premium-footer-brand-cta shrink-0">
-              <Link
-                href={buildContactUrl("footer")}
-                className="premium-footer-book-btn"
-                onClick={() =>
-                  trackBookAppointmentClick({
-                    ctaLocation: "footer",
-                    destination: buildContactUrl("footer"),
-                  })
-                }
-              >
-                <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                {bookCta}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Upper — nav + contact inside footer */}
+      {/* Upper — nav + contact */}
       <div className="premium-footer-upper relative z-10">
         <div className="mx-auto max-w-container px-4 sm:px-6 md:px-10 lg:px-12">
           <div className="premium-footer-grid">

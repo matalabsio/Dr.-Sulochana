@@ -1,96 +1,108 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, BookOpen } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowRight, Globe } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import KnowledgeArticleCard from "@/components/knowledge/KnowledgeArticleCard";
+import KnowledgeFilterBar from "@/components/knowledge/KnowledgeFilterBar";
+import {
+  filterKnowledgeArticles,
+  useKnowledgeArticles,
+} from "@/components/knowledge/useKnowledgeArticles";
 import NewsletterBlock from "@/components/landing/NewsletterBlock";
-import OptimizedImage from "@/components/ui/OptimizedImage";
-import { knowledgeSection, landingBlogArticles } from "@/content/landing";
+import { knowledgeSection } from "@/content/landing";
+import type { KnowledgeFilter } from "@/content/knowledgeHub";
+import { knowledgeFilters } from "@/content/knowledgeHub";
 import { useMessages } from "@/i18n/LanguageProvider";
+
+const LANDING_ARTICLE_LIMIT = 3;
 
 export default function Knowledge() {
   const { knowledge, common } = useMessages();
-  const { viewAllHref } = knowledgeSection;
+  const articles = useKnowledgeArticles();
+  const [activeFilter, setActiveFilter] = useState<KnowledgeFilter>("All");
+
+  const filterLabels = useMemo(
+    () =>
+      knowledgeFilters.map((filterId) => ({
+        id: filterId,
+        label: knowledge.filterLabels[filterId],
+      })),
+    [knowledge.filterLabels],
+  );
+
+  const visibleArticles = useMemo(
+    () => filterKnowledgeArticles(articles, activeFilter).slice(0, LANDING_ARTICLE_LIMIT),
+    [articles, activeFilter],
+  );
 
   return (
     <section
       id="resources"
-      className="conversion-knowledge knowledge-section scroll-mt-[var(--nav-height)] px-4 py-14 sm:px-6 sm:py-16 md:py-20 lg:px-12"
+      className="knowledge-section scroll-mt-[var(--nav-height)] px-4 py-12 sm:px-6 sm:py-14 md:py-16 lg:px-12"
       aria-labelledby="knowledge-heading"
     >
-      <div className="knowledge-section-inner mx-auto">
-        <ScrollReveal y={24}>
-          <header className="knowledge-section-header">
-            <div className="knowledge-section-header-copy">
-              <span className="conversion-eyebrow">
-                <BookOpen className="h-3 w-3" strokeWidth={2} aria-hidden />
-                {knowledge.badge}
-              </span>
-              <h2 id="knowledge-heading" className="conversion-title">
-                {knowledge.title}
-              </h2>
-              <p className="conversion-lead">{knowledge.subtitle}</p>
+      <div className="knowledge-section-shell mx-auto">
+        <p className="knowledge-section-top-label">{knowledge.sectionLabel}</p>
+
+        <div className="knowledge-hub-panel">
+          <ScrollReveal y={20}>
+            <header className="knowledge-hub-header">
+              <div className="knowledge-hub-header-copy">
+                <div className="knowledge-hub-eyebrow-row">
+                  <span className="knowledge-hub-eyebrow">{knowledge.badge}</span>
+                  <span className="knowledge-hub-eyebrow-line" aria-hidden />
+                </div>
+                <h2 id="knowledge-heading" className="knowledge-hub-title">
+                  {knowledge.title}
+                </h2>
+                <p className="knowledge-hub-lead">{knowledge.subtitle}</p>
+              </div>
+
+              <div className="knowledge-hub-filters-wrap">
+                <KnowledgeFilterBar
+                  filters={filterLabels}
+                  activeFilter={activeFilter}
+                  onFilterChange={setActiveFilter}
+                />
+              </div>
+            </header>
+          </ScrollReveal>
+
+          <ScrollReveal
+            y={24}
+            staggerSelector="[data-knowledge-hub-card]"
+            stagger={0.08}
+            key={activeFilter}
+          >
+            <div className="knowledge-hub-grid knowledge-hub-grid--landing" role="tabpanel">
+              {visibleArticles.map((article) => (
+                <div key={article.slug} data-knowledge-hub-card>
+                  <KnowledgeArticleCard
+                    article={article}
+                    readArticleLabel={common.readArticle}
+                    variant="landing"
+                  />
+                </div>
+              ))}
             </div>
-            <Link href={viewAllHref} className="conversion-link-all knowledge-section-view-all">
-              {common.viewAll}
+          </ScrollReveal>
+
+          <div className="knowledge-hub-footer-bar">
+            <p className="knowledge-hub-languages">
+              <Globe className="knowledge-hub-languages-icon" strokeWidth={1.75} aria-hidden />
+              <span>
+                {knowledge.languagesNote}{" "}
+                <strong>{knowledge.languagesHighlight}</strong>
+              </span>
+            </p>
+            <Link href={knowledgeSection.viewAllHref} className="knowledge-hub-view-all-btn">
+              {knowledge.viewAllArticles}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
-          </header>
-        </ScrollReveal>
-
-        <ScrollReveal staggerSelector="[data-knowledge-card]" stagger={0.08} y={28}>
-          <div className="knowledge-section-grid">
-            {landingBlogArticles.map((a, i) => {
-              const localized = knowledge.articles[i];
-              const title = localized?.title ?? a.title;
-              const desc = localized?.desc ?? a.desc;
-              const category = localized?.category ?? a.category;
-              return (
-                <article
-                  key={title}
-                  data-knowledge-card
-                  className="knowledge-card knowledge-card--circle group"
-                >
-                  <Link href={`/blog/${a.slug}`} className="knowledge-card-link">
-                    <div className="knowledge-card-media knowledge-card-media--circle">
-                      <div className="knowledge-card-circle">
-                        <div className="knowledge-card-circle-img">
-                          <OptimizedImage
-                            src={a.image}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 70vw, 266px"
-                            className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
-                            wrapperClassName="!absolute !inset-0 !bg-transparent"
-                          />
-                        </div>
-                        <div className="knowledge-card-badges--circle">
-                          <span className="knowledge-pill">{a.time}</span>
-                          {a.expertReviewed ? (
-                            <span className="knowledge-pill knowledge-pill--reviewed">
-                              <BadgeCheck className="h-3 w-3 shrink-0" aria-hidden />
-                              Expert reviewed
-                            </span>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="knowledge-card-body">
-                      <span className="knowledge-category">{category}</span>
-                      <h3 className="knowledge-card-title">{title}</h3>
-                      <p className="knowledge-card-desc">{desc}</p>
-                      <p className="knowledge-author">{a.author}</p>
-                      <span className="knowledge-cta">
-                        {common.readArticle}
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </div>
-                  </Link>
-                </article>
-              );
-            })}
           </div>
-        </ScrollReveal>
+        </div>
 
         <div className="knowledge-section-newsletter">
           <NewsletterBlock />

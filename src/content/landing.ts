@@ -52,12 +52,13 @@ export const landingPartners = [
 /** Unified trust / about storytelling section */
 export const trustStory = {
   mission: {
-    badge: "About",
+    badge: "About Us",
     title: "Meet Dr. Sulochana Mortha",
+    credentials: "MBBS · MD · DGO",
     subtitle: doctor.bio.aboutLead,
-    primaryCta: "Learn More About Dr. Sulochana",
+    primaryCta: "Her Qualification & Experience",
     primaryHref: "/about",
-    secondaryCta: "Explore Services",
+    secondaryCta: "Explore Treatments",
     secondaryHref: "/services",
   },
   trustCards: [
@@ -82,18 +83,18 @@ export const trustStory = {
   ],
   pillars: [
     {
-      title: "Experienced Specialist",
-      desc: "Over 30 years of expertise in women's healthcare, pregnancy management, and fertility treatment.",
+      title: "40 Years of Fertility Practice",
+      desc: "Deep expertise in IVF, IUI, ICSI, PCOS, and high-risk pregnancy — built over four decades of clinical practice in Hyderabad.",
       icon: Stethoscope,
     },
     {
-      title: "Patient-Centered Approach",
-      desc: "Every treatment plan is tailored to your unique health goals and medical needs.",
+      title: "Treatment Plans in Your Language",
+      desc: "Every step of your fertility journey explained clearly in Telugu, Hindi, or English. No confusion, no jargon.",
       icon: HeartHandshake,
     },
     {
-      title: "Advanced Clinical Care",
-      desc: "Modern diagnostic methods and evidence-based treatment protocols.",
+      title: "IVF · IUI · ICSI Under One Roof",
+      desc: "Complete fertility care from initial evaluation to advanced assisted reproduction — all at our Madinaguda clinic.",
       icon: FlaskConical,
     },
   ],
@@ -180,24 +181,30 @@ export const journeySection = {
   steps: [
     {
       step: 1,
-      title: "Schedule Your Consultation",
-      desc: "Book an appointment at your convenience.",
+      title: "Book Your First Visit",
+      desc: "Book an appointment at your convenience. Your first call is free.",
       icon: Calendar,
     },
     {
       step: 2,
-      title: "Comprehensive Evaluation",
+      title: "Fertility Evaluation",
       desc: "Discuss your concerns and undergo necessary assessments.",
       icon: Stethoscope,
     },
     {
       step: 3,
-      title: "Personalized Care Plan",
+      title: "Personalised Treatment Plan",
       desc: "Receive a treatment strategy tailored to your needs.",
       icon: ClipboardList,
     },
     {
       step: 4,
+      title: "Your Procedure",
+      desc: "Undergo your planned fertility or pregnancy procedure with expert clinical care.",
+      icon: Heart,
+    },
+    {
+      step: 5,
       title: "Ongoing Support",
       desc: "Benefit from continuous guidance and follow-up care.",
       icon: HeartHandshake,
@@ -210,13 +217,13 @@ export const landingSteps = journeySection.steps;
 
 export const servicesSection = {
   badge: "Services",
-  title: "Comprehensive Care for Women & Families",
+  title: "Fertility & Women's Health Treatments",
   subtitle:
-    "Expert care across fertility, pregnancy, women's health, and pediatrics — tailored to support you and your family at every stage.",
+    "IVF, IUI, ICSI, PCOS management, high-risk pregnancy, and complete women's healthcare — all at Dr. Sulochana's Hospital, Madinaguda.",
   viewAllHref: "/services",
-  viewAllLabel: "View All Services",
+  viewAllLabel: "View All Treatments",
   trustBadges: [
-      "40+ Years Experience",
+    "40+ Years Experience",
     "10,000+ Families Served",
     "98% Patient Satisfaction",
     "4 Core Specialties",
@@ -225,64 +232,61 @@ export const servicesSection = {
 
 export const landingSolutions = [
   {
-    title: "Fertility",
-    headline: "Fertility & Conception Care",
-    desc: "Personalized fertility assessments, counseling, and reproductive health support.",
-    href: "/services#conception",
-    image: images.conception.art,
-    featured: false,
+    title: "IVF",
+    headline: "IVF · IUI · ICSI Treatments",
+    desc: "Comprehensive fertility evaluation and assisted reproduction — IVF, IUI, and ICSI — with personalised treatment plans for every couple.",
+    href: "/treatments/fertility-treatment",
+    icon: images.serviceIcons.ivf,
   },
   {
-    title: "Pregnancy",
-    headline: "Pregnancy Care",
-    desc: "Prenatal consultations, routine monitoring, high-risk pregnancy management, and childbirth preparation.",
-    href: "/services",
-    image: images.motherhood,
-    featured: true,
+    title: "High-Risk Pregnancy",
+    headline: "High-Risk Pregnancy Care",
+    desc: "Specialised monitoring and management for high-risk pregnancies, from the first trimester through delivery.",
+    href: "/treatments/high-risk-pregnancy",
+    icon: images.serviceIcons.highRiskPregnancy,
   },
   {
-    title: "Women's Health",
-    headline: "Women's Health",
-    desc: "Comprehensive gynecology consultations, preventive screenings, menstrual health, and menopausal care.",
-    href: "/services",
-    image: images.knowledge.bio,
-    featured: false,
+    title: "PCOS",
+    headline: "PCOS & Gynaecology",
+    desc: "Diagnosis and treatment of PCOS, endometriosis, menstrual disorders, and all general gynaecology concerns.",
+    href: "/treatments/pcos-management",
+    icon: images.serviceIcons.pcos,
   },
-
+  {
+    title: "Newborn",
+    headline: "Newborn & Paediatric Care",
+    desc: "Neonatal care and paediatric consultations for your baby's health from birth.",
+    href: "/services",
+    icon: images.serviceIcons.newborn,
+  },
 ] as const;
 
 export const testimonialsSection = {
   badge: "Patient Success Stories",
-  title: "Real Stories. Real Families. Real Hope.",
+  title: "Real Families. Real Babies. Real Hope.",
   subtitle:
-    "Discover how expert care, advanced fertility treatments, and compassionate support have helped families achieve their dreams of parenthood.",
-  featuredStories: [
+    "Thousands of couples have walked into Dr. Sulochana's clinic with questions and walked out with their family complete. Here are some of their stories.",
+  viewAllHref: "/testimonials",
+  viewAllLabel: "View All Success Stories",
+  cards: [
     {
-      names: "Emily & James",
+      name: "Padmavathi R.",
+      location: "Miyapur",
+      treatment: "IVF",
       quote:
-        "After six years of uncertainty, our IVF journey gave us the greatest gift of all.",
-      cta: "Read Full Story",
-      image: images.landing.testimonialFeature,
-      href: "/testimonials",
-      imageAlt: "Happy family celebrating their fertility journey",
+        "After two years of trying, Dr. Sulochana's team guided us through IVF with such patience. Our daughter was born in March 2025.",
     },
     {
-      names: "Priya & Arjun",
-      quote:
-        "From our first consultation to holding our daughter, every step felt personal and supported.",
-      cta: "Read Full Story",
-      image: images.trustCouple,
-      href: "/testimonials",
-      imageAlt: "Couple sharing their parenthood journey",
+      name: "Lakshmi S.",
+      location: "Madinaguda",
+      treatment: "IUI",
+      quote: "[Real patient quote to be provided]",
     },
     {
-      names: "Meera & Raj",
-      quote:
-        "The team's patience and expertise turned years of hope into the family we dreamed of.",
-      cta: "Read Full Story",
-      image: images.motherhood,
-      href: "/testimonials",
-      imageAlt: "Parents with their newborn after fertility treatment",
+      name: "Anitha M.",
+      location: "Kondapur",
+      treatment: "PCOS + IVF",
+      quote: "[Real patient quote to be provided]",
     },
   ],
 } as const;
@@ -386,20 +390,19 @@ export const videoTestimonials = [
   },
 ] as const;
 
-/** Homepage Knowledge Centre — Figma section bg: #FAF7FA → #F8F6F1 */
+/** Homepage Knowledge Centre — panel + filters + 3-card preview */
 export const knowledgeSection = {
   badge: "Knowledge Centre",
-  title: "Expert Health Information for Every Stage of Life",
+  title: "Expert Articles on Fertility & Women's Health",
   subtitle:
-    "Stay informed with trusted medical guidance on fertility, pregnancy, women's health, newborn care, and preventive healthcare.",
+    "Trusted medical information on IVF, IUI, PCOS, pregnancy, and women's health — written by Dr. Sulochana's team.",
   viewAllHref: "/knowledge",
-  viewAllLabel: "View All",
+  viewAllLabel: "View All Articles",
+  landingArticleLimit: 3,
 } as const;
 
-/** Homepage Knowledge Centre cards — omit fertility evaluation article (Figma shows 6 cards). */
-export const landingBlogArticles = getKnowledgeHubArticles().filter(
-  (article) => article.slug !== "when-to-seek-fertility-care",
-);
+/** All articles for Knowledge Centre (homepage filters + /knowledge page). */
+export const landingBlogArticles = getKnowledgeHubArticles();
 
 export const newsletterSection = {
   title: "Stay Informed on Your Fertility Journey",
@@ -410,9 +413,17 @@ export const newsletterSection = {
 } as const;
 
 export const preFooterCta = {
-  title: "Start Your Healthcare Journey Today",
+  eyebrow: "Take the next step",
+  title: "Ready to Start Your Fertility Journey?",
   subtitle:
-    "Whether you're planning a family, expecting a baby, seeking fertility guidance, or looking for expert women's healthcare, we're here to help.",
+    "Whether you're exploring IVF for the first time or have questions about your fertility options, Dr. Sulochana's team is here with answers and a plan that works for you.",
+  doctorName: doctor.name,
+  bio: "Dr. Sulochana is committed to delivering compassionate women's healthcare, pregnancy care, and pediatric support for families across Hyderabad.",
+  trustBadges: [
+    { icon: "star" as const, label: "98% Patient Satisfaction" },
+    { icon: "award" as const, label: "30+ Years Experience" },
+    { icon: "families" as const, label: "10,000+ Families Served" },
+  ],
   primaryCta: "Book Appointment",
   secondaryCta: "Call Now",
   primaryHref: "/contact",
@@ -439,6 +450,7 @@ export const footerContent = {
   nav: {
     company: [
       { name: "About", href: "/about" },
+      { name: "Madinaguda Location", href: "/madinaguda-hyderabad" },
       { name: "Success Stories", href: "/testimonials" },
       { name: "Careers", href: "/contact" },
       { name: "Contact", href: "/contact" },
@@ -476,41 +488,78 @@ export const footerContent = {
 
 export const whyChooseSection = {
   eyebrow: "Why Choose Us",
-  title: "Compassionate Care. Proven Experience. Personalized Treatment.",
+  title: "Compassionate Care. Proven Results. Affordable Prices.",
 } as const;
 
 export const landingWhyChoose = [
   {
-    title: "Experienced Specialist",
-    desc: "Over 30 years of expertise in women's healthcare, pregnancy management, and fertility treatment.",
+    title: "IVF at Costs Every Family Can Afford",
+    desc: "Transparent pricing, no hidden charges. Fertility treatment designed for middle-class families — not luxury clinics.",
     icon: Stethoscope,
   },
   {
-    title: "Patient-Centered Approach",
-    desc: "Every treatment plan is tailored to your unique health goals and medical needs.",
+    title: "40 Years of Fertility Expertise",
+    desc: "One of Hyderabad\u2019s most experienced infertility specialists. Over 20,000 babies delivered across four decades of practice.",
     icon: HeartHandshake,
   },
   {
-    title: "Advanced Clinical Care",
-    desc: "Modern diagnostic methods and evidence-based treatment protocols.",
+    title: "We Speak Your Language",
+    desc: "Our team explains every step of your fertility journey in Telugu, Hindi, or English — no confusion, no medical jargon.",
     icon: FlaskConical,
   },
   {
-    title: "Affordable Healthcare",
-    desc: "Quality healthcare services designed to remain accessible to every family.",
+    title: "Clear Treatment Costs from Day 1",
+    desc: "You know exactly what your IVF, IUI, or ICSI treatment will cost before you begin. No surprise bills.",
     icon: Wallet,
   },
   {
-    title: "Continuous Support",
-    desc: "Dedicated guidance throughout fertility, pregnancy, and postnatal care.",
+    title: "IUI to IVF to ICSI — All Here",
+    desc: "From basic fertility evaluation to advanced assisted reproduction, every treatment is available under one roof in Madinaguda.",
     icon: Heart,
   },
   {
-    title: "Trusted by Families",
-    desc: "Thousands of women and families have trusted us with their healthcare journey.",
+    title: "High-Risk Pregnancy Specialists",
+    desc: "If your pregnancy needs extra attention, Dr. Sulochana\u2019s team provides the specialised monitoring and care your family deserves.",
     icon: Users,
   },
 ] as const;
+
+export const pricingSection = {
+  ctaHref: "/contact",
+  plans: [
+    {
+      id: "iui",
+      featured: false,
+      features: [
+        "Consultation & Fertility Assessment",
+        "Ovulation Monitoring",
+        "IUI Procedure",
+        "Follow-up Consultation",
+      ],
+    },
+    {
+      id: "ivf",
+      featured: true,
+      features: [
+        "Consultation & Fertility Evaluation",
+        "Controlled Ovarian Stimulation",
+        "Egg Retrieval Procedure",
+        "Embryo Culture & Transfer",
+        "Follow-up Support",
+      ],
+    },
+    {
+      id: "icsi",
+      featured: false,
+      features: [
+        "Complete ICSI Procedure",
+        "Advanced Sperm Injection",
+        "Embryo Culture & Transfer",
+        "Fertility Specialist Follow-up",
+      ],
+    },
+  ],
+} as const;
 
 export const specialistsPage = {
   eyebrow: "Our Team",

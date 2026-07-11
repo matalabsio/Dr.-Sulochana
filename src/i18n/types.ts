@@ -61,6 +61,7 @@ export type SiteMessages = {
   trustStory: {
     missionBadge: string;
     missionTitle: string;
+    missionCredentials: string;
     missionSubtitle: string;
     missionPrimaryCta: string;
     missionSecondaryCta: string;
@@ -95,7 +96,7 @@ export type SiteMessages = {
     title: string;
     subtitle: string;
     viewAllStories: string;
-    slides: { quote: string; designation: string }[];
+    cards: { name: string; location: string; treatment: string; quote: string }[];
   };
   testimonialMarquee: {
     ariaLabel: string;
@@ -103,8 +104,16 @@ export type SiteMessages = {
   };
   knowledge: {
     badge: string;
+    sectionLabel: string;
     title: string;
     subtitle: string;
+    filterLabels: Record<
+      "All" | "IVF" | "IUI" | "PCOS" | "Pregnancy" | "Women's Health",
+      string
+    >;
+    languagesNote: string;
+    languagesHighlight: string;
+    viewAllArticles: string;
     articles: { title: string; desc: string; category: string }[];
     newsletterTitle: string;
     newsletterSubtitle: string;
@@ -116,10 +125,28 @@ export type SiteMessages = {
     viewAll: string;
     items: { q: string; a: string }[];
   };
+  honestPricing: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    footnote: string;
+    priceLabel: string;
+    ctaLabel: string;
+    plans: {
+      name: string;
+      badge?: string;
+      price: string;
+      features: string[];
+      featured?: boolean;
+    }[];
+  };
   preFooter: {
     eyebrow: string;
     title: string;
     subtitle: string;
+    doctorName: string;
+    bio: string;
+    trustBadges: { icon: "star" | "award" | "families"; label: string }[];
     primaryCta: string;
     secondaryCta: string;
   };
@@ -152,6 +179,7 @@ export type SiteMessages = {
     privacyPolicy: string;
     terms: string;
     accessibility: string;
+    madinagudaLocation: string;
     copyright: string;
     trustBadges: string[];
     hours: string[];

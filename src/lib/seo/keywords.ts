@@ -48,9 +48,14 @@ export const keywordClusters = {
 export const pageSeo = {
   home: {
     title:
-      "Dr. Sulochana Mortha | Gynecologist in Hyderabad — Sulochana Hospital Madinaguda",
+      "Dr. Sulochana's Hospital, Madinaguda | Dr. Sulochana Mortha – Gynecologist & IVF Specialist",
     description:
-      "Sulochana Hospital in Madinaguda, Hyderabad — Dr. Sulochana Mortha, experienced gynecologist and fertility specialist. IVF, pregnancy care, PCOS, and women's health. Book a consultation.",
+      "Dr. Sulochana's Hospital in Madinaguda, Hyderabad offers expert gynecology, fertility, IVF, pregnancy, PCOS, and women's healthcare under the care of Dr. Sulochana Mortha. Book your consultation today.",
+  },
+  location: {
+    title: "Dr Sulochana Hospital Madinaguda | Gynecologist & IVF Clinic Hyderabad",
+    description:
+      "Visit Dr. Sulochana's Hospital in Madinaguda, Hyderabad — a trusted gynecologist and IVF fertility clinic led by Dr. Sulochana Mortha. Pregnancy care, PCOS, and women's health. Book your consultation.",
   },
   about: {
     title: "Dr. Sulochana Mortha — Gynecologist in Hyderabad",

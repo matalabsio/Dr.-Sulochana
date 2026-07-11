@@ -4,6 +4,7 @@ import TestimonialMarqueeBanner from "@/components/landing/TestimonialMarqueeBan
 import TrustStorySection from "@/components/landing/TrustStorySection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import SpecializedSolutions from "@/components/landing/SpecializedSolutions";
+import HonestPricing from "@/components/landing/HonestPricing";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Knowledge from "@/components/Knowledge";
@@ -35,16 +36,17 @@ export default function Page() {
       <main className="site-main relative z-[1]">
         <Hero />
         <TrustStorySection />
-        <WhyChooseUs />
         <SpecializedSolutions />
+        <WhyChooseUs />
+        <HonestPricing />
         <HowItWorks />
         <Testimonials />
         <div className="hidden md:block">
           <Knowledge />
         </div>
         <HomeFaq />
-        <PreFooterCTA />
       </main>
+      <PreFooterCTA />
       <Footer />
     </>
   );

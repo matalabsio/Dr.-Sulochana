@@ -47,41 +47,42 @@ export const en: SiteMessages = {
     contact: "Contact",
   },
   hero: {
-    trustBadge: "Trusted Women's Healthcare in Hyderabad",
+    trustBadge: "Dr. Sulochana's Hospital \u2022 Madinaguda, Hyderabad",
     headlineLine1: "Hyderabad\u2019s Trusted",
     headlineLine2: "IVF & Fertility",
     headlineLine3Lead: "Care \u2014",
     headlineLine3Tail: " For Every",
     headlineLine4: "Family\u2019s Journey",
     subtitle:
-      "Quality fertility treatment at costs every family can afford. 40 years of clinical experience in IVF, IUI, ICSI, and high-risk pregnancy care.",
+      "At Dr. Sulochana\u2019s Hospital, Madinaguda, quality fertility treatment at costs every family can afford. 40 years of clinical experience in IVF, IUI, ICSI, and high-risk pregnancy care.",
     primaryCta: "Book Appointment",
     secondaryCta: "Explore Treatments",
   },
   trustStory: {
-    missionBadge: "About",
+    missionBadge: "About Us",
     missionTitle: "Meet Dr. Sulochana Mortha",
+    missionCredentials: "MBBS · MD · DGO",
     missionSubtitle:
-      "Dr. M. Sulochana Mortha is a highly acclaimed Obstetrician, Gynaecologist, and Infertility Specialist in Hyderabad—with 40 years of clinical excellence in fertility, high-risk pregnancy, and women's health.",
-    missionPrimaryCta: "Learn More About Dr. Sulochana",
-    missionSecondaryCta: "Explore Services",
+      "Dr. M. Sulochana Mortha is one of Hyderabad\u2019s most experienced IVF and infertility specialists \u2014 with 40 years of clinical practice in fertility treatments, high-risk pregnancy management, and women\u2019s healthcare. She has helped over 20,000 families welcome their babies, with treatment plans designed to be effective and accessible for every income level.",
+    missionPrimaryCta: "Her Qualification & Experience",
+    missionSecondaryCta: "Explore Treatments",
     aboutBadge: "Doctor Philosophy",
     aboutTitle: "Healthcare Built on Trust and Understanding",
     aboutBody:
-      '"I believe in delivering empathetic, patient-centric healthcare within a supportive, informative environment—treating every patient with the dedicated care I would offer my own family." — Dr. M. Sulochana Mortha',
+      "At Dr. Sulochana\u2019s Hospital, Madinaguda, we combine four decades of women\u2019s healthcare with compassionate, evidence-based treatment. \"I believe in delivering empathetic, patient-centric healthcare within a supportive, informative environment—treating every patient with the dedicated care I would offer my own family.\" — Dr. M. Sulochana Mortha",
     partnersTitle: "Trusted & Recognized By Leading Healthcare Organizations",
     pillars: [
       {
-        title: "Experienced Specialist",
-        desc: "Over 40 years of expertise in women's healthcare, pregnancy management, and fertility treatment.",
+        title: "40 Years of Fertility Practice",
+        desc: "Deep expertise in IVF, IUI, ICSI, PCOS, and high-risk pregnancy \u2014 built over four decades of clinical practice in Hyderabad.",
       },
       {
-        title: "Patient-Centered Approach",
-        desc: "Every treatment plan is tailored to your unique health goals and medical needs.",
+        title: "Treatment Plans in Your Language",
+        desc: "Every step of your fertility journey explained clearly in Telugu, Hindi, or English. No confusion, no jargon.",
       },
       {
-        title: "Advanced Clinical Care",
-        desc: "Modern diagnostic methods and evidence-based treatment protocols.",
+        title: "IVF \u00b7 IUI \u00b7 ICSI Under One Roof",
+        desc: "Complete fertility care from initial evaluation to advanced assisted reproduction \u2014 all at our Madinaguda clinic.",
       },
     ],
     expertise: [
@@ -101,31 +102,31 @@ export const en: SiteMessages = {
   },
   whyChoose: {
     eyebrow: "Why Choose Us",
-    title: "Compassionate Care. Proven Experience. Personalized Treatment.",
+    title: "Compassionate Care. Proven Results. Affordable Prices.",
     items: [
       {
-        title: "Experienced Specialist",
-        desc: "Over 40 years of expertise in women's healthcare, pregnancy management, and fertility treatment.",
+        title: "IVF at Costs Every Family Can Afford",
+        desc: "Transparent pricing, no hidden charges. Fertility treatment designed for middle-class families — not luxury clinics.",
       },
       {
-        title: "Patient-Centered Approach",
-        desc: "Every treatment plan is tailored to your unique health goals and medical needs.",
+        title: "40 Years of Fertility Expertise",
+        desc: "One of Hyderabad\u2019s most experienced infertility specialists. Over 20,000 babies delivered across four decades of practice.",
       },
       {
-        title: "Advanced Clinical Care",
-        desc: "Modern diagnostic methods and evidence-based treatment protocols.",
+        title: "We Speak Your Language",
+        desc: "Our team explains every step of your fertility journey in Telugu, Hindi, or English — no confusion, no medical jargon.",
       },
       {
-        title: "Affordable Healthcare",
-        desc: "Quality healthcare services designed to remain accessible to every family.",
+        title: "Clear Treatment Costs from Day 1",
+        desc: "You know exactly what your IVF, IUI, or ICSI treatment will cost before you begin. No surprise bills.",
       },
       {
-        title: "Continuous Support",
-        desc: "Dedicated guidance throughout fertility, pregnancy, and postnatal care.",
+        title: "IUI to IVF to ICSI — All Here",
+        desc: "From basic fertility evaluation to advanced assisted reproduction, every treatment is available under one roof in Madinaguda.",
       },
       {
-        title: "Trusted by Families",
-        desc: "Thousands of women and families have trusted us with their healthcare journey.",
+        title: "High-Risk Pregnancy Specialists",
+        desc: "If your pregnancy needs extra attention, Dr. Sulochana\u2019s team provides the specialised monitoring and care your family deserves.",
       },
     ],
   },
@@ -135,18 +136,34 @@ export const en: SiteMessages = {
     subtitle:
       "A clear, supportive path from your first consultation through personalized treatment and ongoing follow-up care.",
     steps: [
-      { title: "Schedule Your Consultation", desc: "Book an appointment at your convenience." },
-      { title: "Comprehensive Evaluation", desc: "Discuss your concerns and undergo necessary assessments." },
-      { title: "Personalized Care Plan", desc: "Receive a treatment strategy tailored to your needs." },
-      { title: "Ongoing Support", desc: "Benefit from continuous guidance and follow-up care." },
+      {
+        title: "Book Your First Visit",
+        desc: "Book an appointment at your convenience. Your first call is free.",
+      },
+      {
+        title: "Fertility Evaluation",
+        desc: "Discuss your concerns and undergo necessary assessments.",
+      },
+      {
+        title: "Personalised Treatment Plan",
+        desc: "Receive a treatment strategy tailored to your needs.",
+      },
+      {
+        title: "Your Procedure",
+        desc: "Undergo your planned fertility or pregnancy procedure with expert clinical care.",
+      },
+      {
+        title: "Ongoing Support",
+        desc: "Benefit from continuous guidance and follow-up care.",
+      },
     ],
   },
   services: {
     badge: "Services",
-    title: "Comprehensive Care for Women & Families",
+    title: "Fertility & Women's Health Treatments",
     subtitle:
-      "Expert care across fertility, pregnancy, women's health, and pediatrics — tailored to support you and your family at every stage.",
-    viewAllLabel: "View All Services",
+      "IVF, IUI, ICSI, PCOS management, high-risk pregnancy, and complete women's healthcare — all at Dr. Sulochana's Hospital, Madinaguda.",
+    viewAllLabel: "View All Treatments",
     trustBadges: [
       "40+ Years Experience",
       "10,000+ Families Served",
@@ -155,49 +172,52 @@ export const en: SiteMessages = {
     ],
     cards: [
       {
-        label: "Fertility",
-        headline: "Fertility & Conception Care",
-        desc: "Personalized fertility assessments, counseling, and reproductive health support.",
+        label: "IVF",
+        headline: "IVF · IUI · ICSI Treatments",
+        desc: "Comprehensive fertility evaluation and assisted reproduction — IVF, IUI, and ICSI — with personalised treatment plans for every couple.",
       },
       {
-        label: "Pregnancy",
-        headline: "Pregnancy Care",
-        desc: "Prenatal consultations, routine monitoring, high-risk pregnancy management, and childbirth preparation.",
+        label: "High-Risk Pregnancy",
+        headline: "High-Risk Pregnancy Care",
+        desc: "Specialised monitoring and management for high-risk pregnancies, from the first trimester through delivery.",
       },
       {
-        label: "Women's Health",
-        headline: "Women's Health",
-        desc: "Comprehensive gynecology consultations, preventive screenings, menstrual health, and menopausal care.",
+        label: "PCOS",
+        headline: "PCOS & Gynaecology",
+        desc: "Diagnosis and treatment of PCOS, endometriosis, menstrual disorders, and all general gynaecology concerns.",
       },
-     
+      {
+        label: "Newborn",
+        headline: "Newborn & Paediatric Care",
+        desc: "Neonatal care and paediatric consultations for your baby's health from birth.",
+      },
     ],
   },
   testimonials: {
     badge: "Patient Success Stories",
-    title: "Real Stories. Real Families. Real Hope.",
+    title: "Real Families. Real Babies. Real Hope.",
     subtitle:
-      "Discover how expert care, advanced fertility treatments, and compassionate support have helped families achieve their dreams of parenthood.",
+      "Thousands of couples have walked into Dr. Sulochana's clinic with questions and walked out with their family complete. Here are some of their stories.",
     viewAllStories: "View All Success Stories",
-    slides: [
+    cards: [
       {
+        name: "Padmavathi R.",
+        location: "Miyapur",
+        treatment: "IVF",
         quote:
-          "We finally became parents. The support and expert care we received was life-changing. Grateful to the whole team.",
-        designation: "IVF Treatment · Hyderabad",
+          "After two years of trying, Dr. Sulochana's team guided us through IVF with such patience. Our daughter was born in March 2025.",
       },
       {
-        quote:
-          "Dr. Sulochana's team explained everything clearly and never rushed us. Compassionate care at every step.",
-        designation: "Fertility Consultation · Madinaguda",
+        name: "Lakshmi S.",
+        location: "Madinaguda",
+        treatment: "IUI",
+        quote: "[Real patient quote to be provided]",
       },
       {
-        quote:
-          "After years of trying elsewhere, we found a personalized plan that worked. Our miracle baby is here.",
-        designation: "IVF Treatment · Hyderabad",
-      },
-      {
-        quote:
-          "The clinic made a stressful journey feel hopeful and supported. Warm, skilled, and reassuring.",
-        designation: "IUI Treatment · Telangana",
+        name: "Anitha M.",
+        location: "Kondapur",
+        treatment: "PCOS + IVF",
+        quote: "[Real patient quote to be provided]",
       },
     ],
   },
@@ -216,9 +236,21 @@ export const en: SiteMessages = {
   },
   knowledge: {
     badge: "Knowledge Centre",
-    title: "Expert Health Information for Every Stage of Life",
+    sectionLabel: "Knowledge Centre",
+    title: "Expert Articles on Fertility & Women's Health",
     subtitle:
-      "Stay informed with trusted medical guidance on fertility, pregnancy, women's health, newborn care, and preventive healthcare.",
+      "Trusted medical information on IVF, IUI, PCOS, pregnancy, and women's health — written by Dr. Sulochana's team.",
+    filterLabels: {
+      All: "All",
+      IVF: "IVF",
+      IUI: "IUI",
+      PCOS: "PCOS",
+      Pregnancy: "Pregnancy",
+      "Women's Health": "Women's Health",
+    },
+    languagesNote: "More articles available in",
+    languagesHighlight: "Telugu, Hindi & English",
+    viewAllArticles: "View All Articles",
     articles: [
       {
         title: "Confirmation of Pregnancy",
@@ -250,6 +282,11 @@ export const en: SiteMessages = {
         desc: "Options, benefits, and guidance for choosing the right contraceptive method for you.",
         category: "Women's Health",
       },
+      {
+        title: "When to Seek Fertility Care",
+        desc: "Signs it may be time to consult a fertility specialist and what to expect at your first visit.",
+        category: "Fertility",
+      },
     ],
     newsletterTitle: "Stay Informed on Your Fertility Journey",
     newsletterSubtitle:
@@ -259,58 +296,103 @@ export const en: SiteMessages = {
     eyebrow: "Common Questions",
     title: "Frequently Asked Questions",
     subtitle:
-      "Quick answers about appointments, fertility care, pregnancy services, and visiting our clinics in Hyderabad.",
+      "Quick answers about IVF, fertility treatments, costs, and visiting our clinic in Madinaguda, Hyderabad.",
     viewAll: "More questions on our contact page",
     items: [
       {
-        q: "Is Sulochana Hospital in Madinaguda the same as Dr. Sulochana's Hospital?",
-        a: "Yes. Sulochana Hospital and Dr. Sulochana's Hospital refer to the same clinic at Kalyan Tulasiram Chambers, Madinaguda, Hyderabad, led by Dr. Sulochana Mortha.",
+        q: "What is the cost of IVF at Dr. Sulochana's Hospital?",
+        a: "Our IVF packages start from ₹[X] and are designed to be accessible for middle-class families. All costs are explained transparently during your first consultation with no hidden charges.",
       },
       {
-        q: "Who is the gynecologist at Dr. Sulochana's Hospital, Madinaguda?",
-        a: "Dr. Sulochana Mortha (Dr. M. Sulochana Mortha) is the chief gynecologist and obstetrician with 40+ years of experience in gynecology, fertility, and pregnancy care.",
+        q: "How many IVF cycles will I need?",
+        a: "This depends on your individual fertility evaluation. Dr. Sulochana will assess your case and give you a realistic picture during your first consultation.",
       },
       {
-        q: "How do I find a gynecologist near Madinaguda or Hafeezpet?",
-        a: "Dr. Sulochana's Hospital is at Deepti Bus Stop, Madinaguda (near Hafeezpet), Hyderabad. Book a gynecology or fertility consultation by phone, WhatsApp, or our online appointment form.",
+        q: "Do you treat PCOS-related infertility?",
+        a: "Yes. PCOS is one of the most common causes of infertility we treat. Dr. Sulochana has extensive experience in managing PCOS and helping patients conceive naturally or through assisted reproduction.",
       },
       {
-        q: "How do I book my first consultation?",
-        a: "Fill out the appointment form on our contact page, call us directly, or visit Dr. Sulochana's Hospital in Madinaguda to schedule your consultation.",
+        q: "What is the difference between IUI, IVF, and ICSI?",
+        a: "IUI is the simplest assisted fertility procedure. IVF involves fertilisation outside the body. ICSI is an advanced form of IVF used when sperm quality is a concern. Dr. Sulochana will recommend the right approach after your evaluation.",
       },
       {
-        q: "Do I need a referral for fertility treatment?",
-        a: "No referral is required. You can book a fertility assessment or IVF consultation directly with our specialists.",
+        q: "Where is the clinic located?",
+        a: "Dr. Sulochana's Hospital is in Madinaguda, near Swagath Grand Hotel, Hyderabad. We serve patients from Miyapur, Kondapur, Gachibowli, Secunderabad, and across Telangana.",
       },
       {
-        q: "Where are your clinics located?",
-        a: "Our primary centre is at Dr. Sulochana's Hospital, Madinaguda (near Swagath Grand Hotel). Outpatient consultations are also available at GVK One, Jubilee Hills. Please confirm your appointment location when booking.",
+        q: "Do I need a referral to book a fertility consultation?",
+        a: "No referral needed. You can call us directly, WhatsApp us, or fill out the appointment form on this page.",
       },
       {
-        q: "What should I bring for my first visit?",
-        a: "Bring previous medical records, test reports, prescriptions, and a valid ID. If you are visiting for fertility care, bring any prior semen analysis or hormonal test results if available.",
+        q: "Is online consultation available?",
+        a: "Yes. Video consultations are available for initial fertility assessments for patients outside Hyderabad.",
+      },
+    ],
+  },
+  honestPricing: {
+    eyebrow: "Honest Pricing",
+    title: "Honest Pricing. No Surprises.",
+    subtitle:
+      "We believe every family deserves to know the cost of their fertility treatment before they begin. Here\u2019s what to expect at Dr. Sulochana\u2019s Hospital.",
+    footnote:
+      "All treatment costs are discussed transparently during your first consultation. Call us or book an appointment to get a personalised estimate.",
+    priceLabel: "Starting at {price} per cycle",
+    ctaLabel: "Book Free Consultation",
+    plans: [
+      {
+        name: "IUI Treatment",
+        price: "\u20b9[X]",
+        features: [
+          "Consultation & Fertility Assessment",
+          "Ovulation Monitoring",
+          "IUI Procedure",
+          "Follow-up Consultation",
+        ],
       },
       {
-        q: "Are online consultations available?",
-        a: "Yes. Teleconsultation is available for eligible follow-ups and initial discussions. Our team will confirm whether your case is suitable for a virtual visit.",
+        name: "IVF Treatment",
+        badge: "Most Popular",
+        price: "\u20b9[X]",
+        featured: true,
+        features: [
+          "Consultation & Fertility Evaluation",
+          "Controlled Ovarian Stimulation",
+          "Egg Retrieval Procedure",
+          "Embryo Culture & Transfer",
+          "Follow-up Support",
+        ],
       },
       {
-        q: "What services does the hospital offer?",
-        a: "We provide fertility treatments (IUI, IVF/ICSI, egg freezing), pregnancy and high-risk obstetric care, gynecology, PCOS and hormonal health management, and related women's healthcare services.",
+        name: "ICSI Treatment",
+        price: "\u20b9[X]",
+        features: [
+          "Complete ICSI Procedure",
+          "Advanced Sperm Injection",
+          "Embryo Culture & Transfer",
+          "Fertility Specialist Follow-up",
+        ],
       },
     ],
   },
   preFooter: {
     eyebrow: "Take the next step",
-    title: "Start Your Healthcare Journey Today",
+    title: "Ready to Start Your Fertility Journey?",
     subtitle:
-      "Whether you're planning a family, expecting a baby, seeking fertility guidance, or looking for expert women's healthcare, we're here to help.",
+      "Whether you're exploring IVF for the first time or have questions about your fertility options, Dr. Sulochana's team is here with answers and a plan that works for you.",
+    doctorName: "Dr. Sulochana Mortha",
+    bio: "Dr. Sulochana is committed to delivering compassionate women's healthcare, fertility services, pregnancy care, and pediatric support for families across Hyderabad.",
+    trustBadges: [
+      { icon: "star", label: "98% Patient Satisfaction" },
+      { icon: "award", label: "30+ Years Experience" },
+      { icon: "families", label: "10,000+ Families Served" },
+    ],
     primaryCta: "Book Appointment",
     secondaryCta: "Call Now",
   },
   footer: {
     mission:
-      "Dr. Sulochana is committed to delivering compassionate women's healthcare, fertility services, pregnancy care, and pediatric support for families across Hyderabad.",
+      "Dr. Sulochana\u2019s Hospital, Madinaguda, Hyderabad is committed to delivering compassionate women\u2019s healthcare, fertility services, pregnancy care, and pediatric support for families across Hyderabad.",
+    madinagudaLocation: "Madinaguda Location",
     company: "Company",
     resources: "Resources",
     services: "Services",

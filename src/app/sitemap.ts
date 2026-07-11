@@ -8,6 +8,7 @@ const staticRoutes = [
   "",
   "/about",
   "/contact",
+  "/madinaguda-hyderabad",
   "/privacy-policy",
   "/terms",
   "/knowledge",
@@ -24,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),
-    priority: route === "" ? 1 : 0.7,
+    priority: route === "" ? 1 : route === "/madinaguda-hyderabad" ? 0.8 : 0.7,
   }));
 
   const articleEntries = getAllArticleSlugs().map((slug) => ({

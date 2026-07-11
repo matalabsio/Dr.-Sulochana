@@ -113,4 +113,11 @@ export const images = {
     specialist3: ill.coupleFloor,
     specialist4: ill.pregnantWomanOrange,
   },
+
+  serviceIcons: {
+    ivf: "/illustrations/icons/ivf.png",
+    highRiskPregnancy: "/illustrations/icons/happypaitent.png",
+    pcos: "/illustrations/icons/achievement.png",
+    newborn: "/illustrations/icons/born.png",
+  },
 } as const;

@@ -200,14 +200,16 @@ export function buildPhysicianSchema() {
   };
 }
 
-export function buildMedicalClinicSchema() {
+export function buildMedicalClinicSchema(options?: { pagePath?: string }) {
+  const pagePath = options?.pagePath ?? "/";
+
   return {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "LocalBusiness"],
     name: siteConfig.name,
     alternateName: [...siteConfig.alternateNames],
     description: siteConfig.description,
-    url: absoluteUrl("/"),
+    url: absoluteUrl(pagePath),
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: absoluteUrl(images.pregnantCouple),

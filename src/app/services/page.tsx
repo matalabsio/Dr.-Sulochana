@@ -18,8 +18,8 @@ export default function ServicesPage() {
       <Navbar />
       <main className="overflow-x-hidden bg-ivory">
         <ConceptionServicesContent />
-        <PreFooterCTA />
       </main>
+      <PreFooterCTA />
       <Footer />
     </>
   );

@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
               return (
                 <article key={item.title} data-feature className="why-choose-card">
                   <span className="why-choose-card-icon" aria-hidden>
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    <Icon className="h-7 w-7" strokeWidth={1.75} />
                   </span>
                   <div className="why-choose-card-body">
                     <h3 className="why-choose-card-title">{item.title}</h3>

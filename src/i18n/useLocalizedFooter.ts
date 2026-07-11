@@ -27,6 +27,7 @@ export function useLocalizedFooter() {
       nav: {
         company: base.nav.company.map((link) => {
           if (link.name === "About") return { ...link, name: t.about };
+          if (link.name === "Madinaguda Location") return { ...link, name: t.madinagudaLocation };
           if (link.name === "Success Stories") return { ...link, name: t.successStories };
           if (link.name === "Careers") return { ...link, name: t.careers };
           if (link.name === "Contact") return { ...link, name: t.contact };

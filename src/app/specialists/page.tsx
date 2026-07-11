@@ -18,8 +18,8 @@ export default function SpecialistsPage() {
       <Navbar />
       <main className="site-main relative z-[1] overflow-x-hidden bg-ivory">
         <MeetSpecialists variant="page" />
-        <PreFooterCTA />
       </main>
+      <PreFooterCTA />
       <Footer />
     </>
   );
