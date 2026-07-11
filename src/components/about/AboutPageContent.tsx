@@ -23,6 +23,7 @@ import { aboutClinicLocations } from "@/content/aboutPage";
 import { doctor } from "@/content/doctor";
 import { medicalPortalsSection, publicMediaSection, type MediaLinkItem } from "@/content/media";
 import { useMessages } from "@/i18n/LanguageProvider";
+import { trackBookAppointmentClick, trackPhoneClick } from "@/lib/analytics";
 
 type CredentialKey =
   | "specializations"
@@ -339,10 +340,30 @@ export default function AboutPageContent() {
               </p>
               <p>{t.clinic.callToBook}</p>
               <div className="about-clinic-copy-actions">
-                <Link href="/contact" className="about-btn-primary about-btn-primary--lg">
+                <Link
+                  href="/contact"
+                  className="about-btn-primary about-btn-primary--lg"
+                  onClick={() =>
+                    trackBookAppointmentClick({
+                      ctaLocation: "about_clinic",
+                      destination: "/contact",
+                      sourcePage: "/about",
+                    })
+                  }
+                >
                   {t.clinic.bookAppointment}
                 </Link>
-                <a href="tel:+919849861089" aria-label={t.clinic.callAriaLabel} className="about-btn-icon">
+                <a
+                  href="tel:+919849861089"
+                  aria-label={t.clinic.callAriaLabel}
+                  className="about-btn-icon"
+                  onClick={() =>
+                    trackPhoneClick({
+                      ctaLocation: "about_clinic",
+                      sourcePage: "/about",
+                    })
+                  }
+                >
                   <Phone className="h-5 w-5" strokeWidth={1.75} aria-hidden />
                 </a>
               </div>

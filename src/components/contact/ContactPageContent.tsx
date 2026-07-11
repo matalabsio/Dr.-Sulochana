@@ -23,7 +23,7 @@ import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { contactPage as contactPageBase } from "@/content/contact";
 import { doctor } from "@/content/doctor";
 import { useMessages, useSiteLanguage } from "@/i18n/LanguageProvider";
-import { trackAppointmentSubmitted, trackPhoneClick } from "@/lib/analytics";
+import { trackAppointmentSubmitted, trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 import type { AppointmentPayload } from "@/lib/appointments/types";
 import { getWhatsAppAppointmentUrl } from "@/lib/appointments/whatsapp";
 
@@ -169,6 +169,11 @@ export default function ContactPageContent() {
       consultationType: payload.consultationType,
       locale: payload.locale,
       source: payload.source,
+      sourcePage: payload.sourcePage,
+    });
+
+    trackWhatsAppClick({
+      ctaLocation: "contact_form_submit",
       sourcePage: payload.sourcePage,
     });
 

@@ -3,12 +3,14 @@
 import Link from "next/link";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import HeroCountUp from "@/components/hero/HeroCountUp";
+import { HeroMetricIcon } from "@/components/hero/HeroMetricIcons";
 import { heroMetrics } from "@/content/landing";
 import { useMessages } from "@/i18n/LanguageProvider";
 import { images } from "@/content/images";
 import { motion, useReducedMotion } from "framer-motion";
-import { Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { HERO_SPRING, heroFloat, heroSpringItem, heroSpringStagger } from "@/lib/motion";
+import { trackBookAppointmentClick } from "@/lib/analytics";
 import FloatingIllustration from "@/components/landing/FloatingIllustration";
 import { LoveFlowBackdrop } from "@/components/landing/LoveFlowDecor";
 
@@ -22,20 +24,13 @@ function HeroBackground() {
   );
 }
 
-const metricLabelKeys = [
-  "yearsExperience",
-  "familiesServed",
-  "patientSatisfaction",
-  "coreSpecialties",
-] as const;
-
 export default function Hero() {
   const { hero: heroCopy, common } = useMessages();
   const metricLabels = [
     common.yearsExperience,
-    common.familiesServed,
+    common.babiesBorn,
     common.patientSatisfaction,
-    common.coreSpecialties,
+    common.heroTreatments,
   ];
   const reduced = useReducedMotion() ?? false;
   const motionProps = reduced
@@ -54,6 +49,7 @@ export default function Hero() {
             transition={reduced ? { duration: 0 } : { ...HERO_SPRING, delay: 0.12 }}
             className="hero-visual-col hero-visual-col--landing w-full"
           >
+            <div className="hero-visual-offset">
             <div className="hero-visual-card">
               <div className="hero-visual-glow" aria-hidden />
 
@@ -76,44 +72,57 @@ export default function Hero() {
                     alt="Expectant couple sharing a joyful moment — compassionate maternity care at Dr. Sulochana's Hospital"
                     fill
                     priority
-                    sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 399px"
+                    sizes="(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 478px"
                     className="object-contain object-center"
                     wrapperClassName="absolute inset-0 bg-transparent"
                   />
                 </motion.div>
               </motion.div>
             </div>
+            </div>
           </motion.div>
 
           <motion.div
             variants={reduced ? undefined : heroSpringStagger}
             {...motionProps}
-            className="hero-copy-col hero-copy-col--landing flex w-full min-w-0 flex-col"
+            className="hero-copy-col hero-copy-col--landing"
           >
             <motion.p
               variants={reduced ? undefined : heroSpringItem}
-              className="hero-trust-pill mx-auto sm:mx-0"
+              className="hero-trust-pill"
             >
               {heroCopy.trustBadge}
             </motion.p>
 
             <motion.h1
               variants={reduced ? undefined : heroSpringItem}
-              className="hero-headline hero-headline--minimal mt-3 text-center sm:mt-5 sm:text-left"
+              className="hero-headline hero-headline--minimal hero-headline--landing"
             >
-              {heroCopy.headline}
+              <span className="hero-headline-row hero-headline-row--1 hero-headline-accent">
+                {heroCopy.headlineLine1}
+              </span>
+              <span className="hero-headline-row hero-headline-row--2 hero-headline-accent">
+                {heroCopy.headlineLine2}
+              </span>
+              <span className="hero-headline-row hero-headline-row--3">
+                <span className="hero-headline-accent">{heroCopy.headlineLine3Lead}</span>
+                <span className="hero-headline-continued">{heroCopy.headlineLine3Tail}</span>
+              </span>
+              <span className="hero-headline-row hero-headline-row--4 hero-headline-continued">
+                {heroCopy.headlineLine4}
+              </span>
             </motion.h1>
 
             <motion.p
               variants={reduced ? undefined : heroSpringItem}
-              className="hero-lead mt-3 text-center sm:mt-5 sm:text-left"
+              className="hero-lead"
             >
               {heroCopy.subtitle}
             </motion.p>
 
             <motion.div
               variants={reduced ? undefined : heroSpringItem}
-              className="hero-cta-wrap relative mt-5 sm:mt-7"
+              className="hero-cta-wrap"
             >
               <FloatingIllustration
                 src={images.heroAccentIllustration}
@@ -128,31 +137,65 @@ export default function Hero() {
               />
 
               <div className="hero-cta-stack">
-                <Link href="/contact" className="hero-btn-primary hero-btn-primary--minimal cursor-pointer">
-                  <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                  {heroCopy.primaryCta}
+                <Link
+                  href="/contact"
+                  className="hero-btn-primary hero-btn-primary--minimal hero-btn-primary--figma cursor-pointer"
+                  onClick={() =>
+                    trackBookAppointmentClick({
+                      ctaLocation: "hero_primary",
+                      destination: "/contact",
+                      sourcePage: "/",
+                    })
+                  }
+                >
+                  <Calendar className="hero-btn-icon h-4 w-4 shrink-0" strokeWidth={1.33} aria-hidden />
+                  <span className="hero-btn-label">{heroCopy.primaryCta}</span>
+                  <ArrowRight className="hero-btn-arrow h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                 </Link>
-                <Link href="/services" className="hero-btn-outline cursor-pointer">
-                  {heroCopy.secondaryCta}
+                <Link href="/services" className="hero-btn-outline hero-btn-outline--figma cursor-pointer">
+                  <span className="hero-btn-label">{heroCopy.secondaryCta}</span>
+                  <ArrowRight className="hero-btn-arrow h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                 </Link>
               </div>
             </motion.div>
+          </motion.div>
 
-            <motion.div
-              variants={reduced ? undefined : heroSpringItem}
-              className="hero-metrics-minimal hero-metrics-minimal--refined hero-metrics-row mt-5 sm:mt-8"
-            >
-              {heroMetrics.slice(0, 3).map((metric, i) => (
-                <div key={metricLabelKeys[i]} className="hero-metric-minimal">
-                  <div className="hero-metric-minimal-inner">
-                    <p className="hero-metric-minimal-value">
-                      <HeroCountUp value={metric.value} suffix={metric.suffix} />
-                    </p>
-                    <p className="hero-metric-minimal-label">{metricLabels[i]}</p>
+          <motion.div
+            variants={reduced ? undefined : heroSpringItem}
+            className="hero-metrics-card hero-metrics-card--span"
+          >
+            <div className="hero-metrics-strip">
+              {heroMetrics.map((metric, i) => {
+                const label = metricLabels[i];
+                const isStatic = metric.variant === "static";
+
+                return (
+                  <div
+                    key={metric.id}
+                    className={`hero-metric-item hero-metric-item--${metric.variant}`}
+                  >
+                    <span className="hero-metric-icon" aria-hidden>
+                      <HeroMetricIcon name={metric.icon} />
+                    </span>
+                    <div className="hero-metric-copy">
+                      {isStatic ? (
+                        <p className="hero-metric-primary hero-metric-primary--static">{label}</p>
+                      ) : (
+                        <>
+                          <p className="hero-metric-primary">
+                            <HeroCountUp value={metric.value} suffix={metric.suffix} />
+                            {"primarySuffixKey" in metric && metric.primarySuffixKey
+                              ? ` ${common.heroMetricPatient}`
+                              : null}
+                          </p>
+                          <p className="hero-metric-secondary">{label}</p>
+                        </>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                );
+              })}
+            </div>
           </motion.div>
         </div>
       </div>

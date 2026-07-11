@@ -11,13 +11,25 @@ import HomeFaq from "@/components/landing/HomeFaq";
 import PreFooterCTA from "@/components/landing/PreFooterCTA";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/seo/JsonLd";
-import { buildMedicalClinicSchema } from "@/lib/seo/schema";
+import { en } from "@/i18n/messages/en";
+import {
+  buildFaqSchema,
+  buildMedicalClinicSchema,
+  buildWebSiteSchema,
+  compactSchema,
+} from "@/lib/seo/schema";
 
 /** Homepage layout aligned to Figma frame 42:11 (vamshi-MATA) */
 export default function Page() {
+  const schema = compactSchema([
+    buildMedicalClinicSchema(),
+    buildWebSiteSchema(),
+    buildFaqSchema(en.faq.items),
+  ]);
+
   return (
     <>
-      <JsonLd data={buildMedicalClinicSchema()} />
+      <JsonLd data={schema} />
       <Navbar />
       <TestimonialMarqueeBanner floating />
       <main className="site-main relative z-[1]">

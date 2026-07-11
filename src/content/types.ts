@@ -10,6 +10,7 @@ export type ArticleContent = {
   category: string;
   readTime: string;
   publishedAt: string;
+  updatedAt?: string;
   author: string;
   image: string;
   body: string[];

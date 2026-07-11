@@ -4,6 +4,7 @@ import type { ArticleContent } from "@/content/types";
 
 const author = doctor.name;
 const publishedAt = "2025-01-15";
+const updatedAt = "2025-06-15";
 
 export const articles: ArticleContent[] = [
   {
@@ -14,6 +15,7 @@ export const articles: ArticleContent[] = [
     category: "Pregnancy",
     readTime: "5 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.maternityIllustration,
     body: [
@@ -52,6 +54,7 @@ export const articles: ArticleContent[] = [
     category: "Pregnancy",
     readTime: "6 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.pregnancyConsultation,
     body: [
@@ -90,6 +93,7 @@ export const articles: ArticleContent[] = [
     category: "Pregnancy",
     readTime: "7 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.clinicalVisit,
     body: [
@@ -128,6 +132,7 @@ export const articles: ArticleContent[] = [
     category: "Pregnancy",
     readTime: "6 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.pregnancyConsultation,
     body: [
@@ -166,6 +171,7 @@ export const articles: ArticleContent[] = [
     category: "Pregnancy",
     readTime: "5 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.wellnessIllustration,
     body: [
@@ -204,6 +210,7 @@ export const articles: ArticleContent[] = [
     category: "Women's Health",
     readTime: "8 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.womensReproductiveHealth,
     body: [
@@ -247,6 +254,7 @@ export const articles: ArticleContent[] = [
     category: "Fertility",
     readTime: "6 min read",
     publishedAt,
+    updatedAt,
     author,
     image: images.articles.coupleFloor,
     body: [

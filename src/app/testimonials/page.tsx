@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TestimonialMarqueeBanner from "@/components/landing/TestimonialMarqueeBanner";
 import TestimonialsFull from "@/components/testimonials/TestimonialsFull";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { pageSeo } from "@/lib/seo/keywords";
 
-export const metadata = {
-  title: "Patient Success Stories | Dr. Sulochana's Hospital",
-  description:
-    "Real stories from families who found hope through expert fertility care, advanced treatments, and compassionate support in Hyderabad.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: pageSeo.testimonials.title,
+  description: pageSeo.testimonials.description,
+  path: "/testimonials",
+});
 
 export default function TestimonialsPage() {
   return (

@@ -27,11 +27,14 @@ export default function HeroCountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduced = useReducedMotion() ?? false;
-  const [count, setCount] = useState(reduced ? value : 0);
+  const staticText = display ?? formatCount(value, suffix);
+  const [text, setText] = useState(staticText);
 
   useEffect(() => {
-    if (reduced || display) return;
-    if (!inView) return;
+    if (display || reduced || !inView) {
+      setText(staticText);
+      return;
+    }
 
     let start: number | null = null;
     let frame: number;
@@ -40,30 +43,18 @@ export default function HeroCountUp({
       if (start === null) start = ts;
       const progress = Math.min((ts - start) / (duration * 1000), 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(value * eased);
+      setText(formatCount(value * eased, suffix));
       if (progress < 1) frame = requestAnimationFrame(step);
-      else setCount(value);
+      else setText(formatCount(value, suffix));
     };
 
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
-  }, [inView, reduced, value, duration, display]);
-
-  useEffect(() => {
-    if (reduced) setCount(value);
-  }, [reduced, value]);
-
-  if (display) {
-    return (
-      <span ref={ref} className={className}>
-        {display}
-      </span>
-    );
-  }
+  }, [display, duration, inView, reduced, staticText, suffix, value]);
 
   return (
     <span ref={ref} className={className}>
-      {formatCount(count, suffix)}
+      {text}
     </span>
   );
 }

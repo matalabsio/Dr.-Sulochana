@@ -10,7 +10,10 @@ export type SiteMessages = {
     learnMore: string;
     yearsExperience: string;
     familiesServed: string;
+    babiesBorn: string;
     patientSatisfaction: string;
+    heroMetricPatient: string;
+    heroTreatments: string;
     coreSpecialties: string;
     readFullStory: string;
     viewAllServices: string;
@@ -46,7 +49,11 @@ export type SiteMessages = {
   };
   hero: {
     trustBadge: string;
-    headline: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    headlineLine3Lead: string;
+    headlineLine3Tail: string;
+    headlineLine4: string;
     subtitle: string;
     primaryCta: string;
     secondaryCta: string;
@@ -135,6 +142,11 @@ export type SiteMessages = {
     pregnancyCare: string;
     pcosManagement: string;
     gynecologyConsultation: string;
+    highRiskPregnancy: string;
+    fibroidsTreatment: string;
+    menopauseManagement: string;
+    normalDelivery: string;
+    cSectionCare: string;
     womensHealth: string;
     pediatricCare: string;
     privacyPolicy: string;

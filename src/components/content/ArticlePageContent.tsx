@@ -1,6 +1,4 @@
-import Link from "next/link";
 import {
-  ArrowLeft,
   BadgeCheck,
   BookOpen,
   Calendar,
@@ -10,6 +8,7 @@ import {
 import ContentCTA from "@/components/content/ContentCTA";
 import ContentFaq from "@/components/content/ContentFaq";
 import RelatedContent from "@/components/content/RelatedContent";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import { doctor } from "@/content/doctor";
 import type { ArticleContent } from "@/content/types";
@@ -35,14 +34,14 @@ export default function ArticlePageContent({ article }: ArticlePageContentProps)
       <div className="article-page-bg" aria-hidden />
 
       <div className="article-page-shell mx-auto max-w-container px-4 sm:px-6 lg:px-12">
-        <nav className="article-topbar" aria-label="Article navigation">
-          <Link href="/knowledge" className="article-back-link">
-            <ArrowLeft className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-            Knowledge Centre
-          </Link>
-          <span className="article-topbar-divider" aria-hidden />
-          <span className="article-topbar-trail">{article.category}</span>
-        </nav>
+        <Breadcrumbs
+          className="mb-4"
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Knowledge Centre", path: "/knowledge" },
+            { name: article.title, path: sourcePage },
+          ]}
+        />
 
         <header className="article-hero">
           <div className="article-hero-grid">

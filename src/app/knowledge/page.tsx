@@ -2,11 +2,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KnowledgePageContent from "@/components/knowledge/KnowledgePageContent";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { pageSeo } from "@/lib/seo/keywords";
 
 export const metadata = buildPageMetadata({
-  title: "Knowledge Centre | Dr. Sulochana's Hospital",
-  description:
-    "Expert health articles on fertility, pregnancy, women's health, and wellness from Dr. Sulochana Mortha, Hyderabad.",
+  title: pageSeo.knowledge.title,
+  description: pageSeo.knowledge.description,
   path: "/knowledge",
 });
 

@@ -1,6 +1,40 @@
+import { aboutProfessionalProfiles } from "@/content/aboutPage";
 import { doctor } from "@/content/doctor";
+import { images } from "@/content/images";
+import { YOUTUBE_CHANNEL_SEARCH } from "@/content/videos";
 import { absoluteUrl, siteConfig } from "@/lib/seo/site";
 import type { FaqItem } from "@/content/types";
+
+const CLINIC_GEO = {
+  latitude: 17.4936856,
+  longitude: 78.3375544,
+};
+
+const OPENING_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "07:00",
+    closes: "19:30",
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: "Sunday",
+    opens: "07:00",
+    closes: "16:30",
+  },
+];
+
+const ORGANIZATION_SAME_AS = [
+  ...aboutProfessionalProfiles.map((p) => p.href),
+  YOUTUBE_CHANNEL_SEARCH,
+  "https://www.instagram.com/p/DBtNliZq3K0/",
+];
+
+export type BreadcrumbCrumb = {
+  name: string;
+  path: string;
+};
 
 export function compactSchema(
   items: Array<Record<string, unknown> | null | undefined>,
@@ -25,12 +59,55 @@ export function buildFaqSchema(faqs: readonly FaqItem[]) {
   };
 }
 
+export function buildBreadcrumbSchema(crumbs: readonly BreadcrumbCrumb[]) {
+  if (crumbs.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: absoluteUrl(crumb.path),
+    })),
+  };
+}
+
+export function buildWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: absoluteUrl("/"),
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: absoluteUrl("/"),
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${absoluteUrl("/knowledge")}?q={search_term_string}`,
+      },
+      "query-input": {
+        "@type": "PropertyValueSpecification",
+        valueRequired: true,
+        valueName: "search_term_string",
+      },
+    },
+  };
+}
+
 export function buildArticleSchema(input: {
   title: string;
   description: string;
   path: string;
   image: string;
   publishedAt: string;
+  updatedAt?: string;
   author: string;
 }) {
   return {
@@ -38,8 +115,9 @@ export function buildArticleSchema(input: {
     "@type": "Article",
     headline: input.title,
     description: input.description,
-    image: [input.image],
+    image: [absoluteUrl(input.image)],
     datePublished: input.publishedAt,
+    dateModified: input.updatedAt ?? input.publishedAt,
     author: {
       "@type": "Person",
       name: input.author,
@@ -49,7 +127,7 @@ export function buildArticleSchema(input: {
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: siteConfig.defaultOgImage,
+        url: absoluteUrl(siteConfig.defaultOgImage),
       },
     },
     mainEntityOfPage: absoluteUrl(input.path),
@@ -103,11 +181,17 @@ export function buildPhysicianSchema() {
     "@context": "https://schema.org",
     "@type": "Physician",
     name: doctor.name,
+    alternateName: ["Dr Sulochana", "Dr M Sulochana Mortha", "Dr Sulochana Mortha"],
+    url: absoluteUrl("/about"),
+    image: absoluteUrl(images.pregnantCouple),
+    telephone: siteConfig.phone,
     medicalSpecialty: [...doctor.specialties],
     knowsAbout: [...doctor.specialties],
+    sameAs: ORGANIZATION_SAME_AS,
     worksFor: {
       "@type": "MedicalClinic",
       name: siteConfig.name,
+      url: absoluteUrl("/"),
     },
     alumniOf: doctor.qualifications.map((q) => ({
       "@type": "EducationalOrganization",
@@ -119,12 +203,25 @@ export function buildPhysicianSchema() {
 export function buildMedicalClinicSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
+    "@type": ["MedicalClinic", "LocalBusiness"],
     name: siteConfig.name,
+    alternateName: [...siteConfig.alternateNames],
     description: siteConfig.description,
     url: absoluteUrl("/"),
     telephone: siteConfig.phone,
     email: siteConfig.email,
+    image: absoluteUrl(images.pregnantCouple),
+    sameAs: ORGANIZATION_SAME_AS,
+    areaServed: siteConfig.areaServed.map((place) => ({
+      "@type": "Place",
+      name: place,
+    })),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: CLINIC_GEO.latitude,
+      longitude: CLINIC_GEO.longitude,
+    },
+    openingHoursSpecification: OPENING_HOURS,
     address: {
       "@type": "PostalAddress",
       streetAddress: doctor.address.full,

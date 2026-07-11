@@ -5,13 +5,38 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import BrandLogo from "@/components/brand/BrandLogo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, ChevronDown, Menu, X } from "lucide-react";
+import { Calendar, ChevronDown, Home, Library, Menu, Phone, Star, Stethoscope, UserCircle, BookOpen, X } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { NavItem } from "@/content/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useMessages } from "@/i18n/LanguageProvider";
 import { useLocalizedNavigation } from "@/i18n/useLocalizedNavigation";
+import { trackBookAppointmentClick } from "@/lib/analytics";
 
 const DESKTOP_NAV_MQ = "(min-width: 1024px)";
+
+const NAV_MOBILE_ICONS: Record<string, LucideIcon> = {
+  "/": Home,
+  "/treatments/fertility-treatment": Stethoscope,
+  "/about": UserCircle,
+  "/testimonials": Star,
+  "/knowledge": BookOpen,
+  "/contact": Phone,
+};
+
+function resolveNavMobileIcon(href?: string, isResourcesGroup = false): LucideIcon {
+  if (isResourcesGroup) return Library;
+  if (href && NAV_MOBILE_ICONS[href]) return NAV_MOBILE_ICONS[href];
+  return BookOpen;
+}
+
+function NavMobileIcon({ icon: Icon }: { icon: LucideIcon }) {
+  return (
+    <span className="nav-link-mobile-icon-wrap" aria-hidden>
+      <Icon className="nav-link-mobile-icon h-5 w-5 shrink-0" strokeWidth={1.75} />
+    </span>
+  );
+}
 
 function isActivePath(pathname: string, hash: string, href: string) {
   if (href === "/") {
@@ -124,13 +149,16 @@ function NavMobileGroup({
     <li>
       <button
         type="button"
-        className={`nav-link-mobile nav-link-mobile--trigger flex w-full min-h-[48px] cursor-pointer items-center justify-between rounded-xl px-4 font-ui text-base font-medium ${
+        className={`nav-link-mobile nav-link-mobile--trigger flex w-full min-h-[48px] cursor-pointer items-center justify-between gap-3 rounded-xl px-4 font-ui text-base font-medium ${
           active ? "nav-link-mobile-active" : ""
         }`}
         aria-expanded={expanded}
         onClick={() => setExpanded((v) => !v)}
       >
-        {item.name}
+        <span className="flex min-w-0 flex-1 items-center gap-3">
+          <NavMobileIcon icon={resolveNavMobileIcon(item.href, true)} />
+          <span className="truncate">{item.name}</span>
+        </span>
         <ChevronDown
           className={`h-5 w-5 shrink-0 transition-transform ${expanded ? "rotate-180" : ""}`}
           aria-hidden
@@ -148,12 +176,13 @@ function NavMobileGroup({
               <li key={child.name}>
                 <Link
                   href={child.href}
-                  className={`nav-link-mobile-sub flex min-h-[44px] cursor-pointer items-center rounded-lg px-6 font-ui text-sm ${
+                  className={`nav-link-mobile-sub flex min-h-[44px] cursor-pointer items-center gap-3 rounded-lg px-6 font-ui text-sm ${
                     isActivePath(pathname, hash, child.href) ? "nav-link-mobile-active" : ""
                   }`}
                   onClick={onNavigate}
                 >
-                  {child.name}
+                  <NavMobileIcon icon={resolveNavMobileIcon(child.href)} />
+                  <span className="truncate">{child.name}</span>
                 </Link>
               </li>
             ))}
@@ -174,6 +203,17 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
 
   const closeMenu = useCallback(() => setOpen(false), []);
+
+  const handleBookAppointmentClick = useCallback(
+    (ctaLocation: string) => {
+      trackBookAppointmentClick({
+        ctaLocation,
+        destination: "/contact",
+        sourcePage: pathname,
+      });
+    },
+    [pathname],
+  );
 
   useEffect(() => {
     const syncHash = () => setHash(window.location.hash);
@@ -241,80 +281,71 @@ export default function Navbar() {
         className={`site-nav-float fixed inset-x-0 top-0 pt-[env(safe-area-inset-top)] ${open ? "z-[70]" : "z-50"}`}
       >
         <nav
-          className={`nav-glass-shell nav-glass-shell--flow flex h-[var(--nav-bar-height)] w-full min-w-0 items-center justify-between gap-1 px-4 sm:gap-3 sm:px-6 lg:px-10 ${
-            scrolled ? "nav-glass-shell-scrolled" : ""
+          className={`site-nav-bar nav-glass-shell nav-glass-shell--flow w-full min-w-0 px-4 sm:px-6 lg:px-10 ${
+            scrolled ? "site-nav-bar--scrolled nav-glass-shell-scrolled" : ""
           }`}
           aria-label="Main navigation"
         >
-          <div className="mx-auto flex h-full w-full min-w-0 max-w-container items-center justify-between gap-1 sm:gap-3">
-          <Link
-            href="/"
-            className="nav-brand-link flex min-h-[44px] min-w-0 shrink items-center transition-opacity duration-200 hover:opacity-85"
-            aria-label="Dr. Sulochana's Hospital — Home"
-          >
-            <BrandLogo
-              variant="onDark"
-              priority
-              className="brand-logo-img--nav"
-            />
-          </Link>
-
-          <div className="nav-desktop-links hidden min-w-0 lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-0.5 xl:gap-1">
-            {navigation.map((item) => {
-              if ("children" in item && item.children) {
-                return (
-                  <NavDropdownDesktop
-                    key={item.name}
-                    item={item}
-                    pathname={pathname}
-                    hash={hash}
-                  />
-                );
-              }
-              const isActive = isActivePath(pathname, hash, item.href);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`nav-link-flow cursor-pointer ${isActive ? "nav-link-flow-active" : ""}`}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="nav-actions flex shrink-0 items-center gap-1 sm:gap-2">
+          <div className="site-nav-inner mx-auto max-w-container">
             <Link
-              href="/contact"
-              className="nav-cta-btn nav-cta-btn--plum nav-cta-btn--compact hidden cursor-pointer sm:inline-flex lg:hidden"
-              aria-label={common.bookAppointment}
+              href="/"
+              className="nav-brand-link flex min-h-[44px] min-w-0 shrink items-center transition-opacity duration-200 hover:opacity-90"
+              aria-label="Dr. Sulochana's Hospital — Home"
             >
-              <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-              <span className="hidden md:inline">{common.bookAppointment}</span>
+              <BrandLogo variant="onDark" priority className="brand-logo-img--nav" />
             </Link>
 
-            <Link href="/contact" className="nav-cta-btn nav-cta-btn--plum hidden cursor-pointer lg:inline-flex">
-              <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-              {common.bookAppointment}
-            </Link>
+            <div className="nav-desktop-links hidden min-w-0 lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-1 xl:gap-1.5">
+              {navigation.map((item) => {
+                if ("children" in item && item.children) {
+                  return (
+                    <NavDropdownDesktop
+                      key={item.name}
+                      item={item}
+                      pathname={pathname}
+                      hash={hash}
+                    />
+                  );
+                }
+                const isActive = isActivePath(pathname, hash, item.href);
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`nav-link-flow cursor-pointer ${isActive ? "nav-link-flow-active" : ""}`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
 
-            <button
-              type="button"
-              onClick={() => setOpen((prev) => !prev)}
-              className="nav-menu-toggle inline-flex h-10 w-10 min-h-[44px] min-w-[44px] shrink-0 cursor-pointer touch-manipulation items-center justify-center rounded-lg sm:h-11 sm:w-11 sm:rounded-xl lg:hidden"
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
-              aria-controls="mobile-nav-panel"
-            >
-              {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
-            </button>
-          </div>
+            <div className="nav-actions flex shrink-0 items-center gap-2 sm:gap-2.5">
+              <LanguageSwitcher variant="nav" />
+
+              <Link
+                href="/contact"
+                className="nav-cta-btn nav-cta-btn--plum nav-cta-btn--header hidden cursor-pointer lg:inline-flex"
+                onClick={() => handleBookAppointmentClick("navbar_desktop")}
+              >
+                <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+                {common.bookAppointment}
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setOpen((prev) => !prev)}
+                className="nav-menu-toggle inline-flex h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 cursor-pointer touch-manipulation items-center justify-center rounded-lg lg:hidden"
+                aria-label={open ? "Close menu" : "Open menu"}
+                aria-expanded={open}
+                aria-controls="mobile-nav-panel"
+              >
+                {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+              </button>
+            </div>
           </div>
         </nav>
       </motion.header>
-
-      <LanguageSwitcher variant="floating" />
 
       <AnimatePresence>
         {open && (
@@ -359,12 +390,13 @@ export default function Navbar() {
                       <li key={item.name}>
                         <Link
                           href={item.href}
-                          className={`nav-link-mobile flex min-h-[48px] cursor-pointer items-center rounded-xl px-4 font-ui text-base font-medium ${
+                          className={`nav-link-mobile flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl px-4 font-ui text-base font-medium ${
                             isActive ? "nav-link-mobile-active" : ""
                           }`}
                           onClick={closeMenu}
                         >
-                          {item.name}
+                          <NavMobileIcon icon={resolveNavMobileIcon(item.href)} />
+                          <span className="truncate">{item.name}</span>
                         </Link>
                       </li>
                     );
@@ -381,7 +413,10 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   className="nav-cta-btn nav-cta-btn--plum mt-4 flex min-h-[48px] w-full cursor-pointer items-center justify-center"
-                  onClick={closeMenu}
+                  onClick={() => {
+                    handleBookAppointmentClick("navbar_mobile");
+                    closeMenu();
+                  }}
                 >
                   <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                   {common.bookAppointment}

@@ -14,18 +14,17 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { assetPaths } from "@/content/images";
-import { siteConfig } from "@/lib/seo/site";
+import { pageSeo } from "@/lib/seo/keywords";
+import { getSiteUrl, siteConfig } from "@/lib/seo/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: "Dr. Sulochana's Hospital | Women's Healthcare, Fertility & Pregnancy — Hyderabad",
+    title: pageSeo.home.title,
     description: siteConfig.description,
     path: "/",
   }),
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.drsulochanahospital.com",
-  ),
+  metadataBase: new URL(getSiteUrl()),
   icons: {
     icon: [
       { url: assetPaths.brand.logo, type: "image/png", sizes: "492x364" },

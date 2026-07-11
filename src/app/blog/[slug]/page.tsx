@@ -42,6 +42,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       path,
       image: article.image,
       publishedAt: article.publishedAt,
+      updatedAt: article.updatedAt,
       author: article.author,
     }),
     buildFaqSchema(article.faqs),

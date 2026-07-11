@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import ContentCTA from "@/components/content/ContentCTA";
 import ContentFaq from "@/components/content/ContentFaq";
 import RelatedContent from "@/components/content/RelatedContent";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import type { TreatmentContent } from "@/content/types";
 
@@ -16,10 +15,14 @@ export default function TreatmentPageContent({ treatment }: TreatmentPageContent
   return (
     <article className="content-page content-page--treatment">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-12">
-        <Link href="/services" className="content-back-link">
-          <ArrowLeft className="h-4 w-4" aria-hidden />
-          Back to Services
-        </Link>
+        <Breadcrumbs
+          className="mb-4"
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: treatment.title, path: sourcePage },
+          ]}
+        />
 
         <header className="content-hero">
           <div className="content-hero-copy">

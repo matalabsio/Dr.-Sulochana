@@ -8,7 +8,10 @@ export const en: SiteMessages = {
     learnMore: "Learn more",
     yearsExperience: "Years Experience",
     familiesServed: "Families Served",
-    patientSatisfaction: "Patient Satisfaction",
+    babiesBorn: "Babies Born",
+    patientSatisfaction: "Satisfaction",
+    heroMetricPatient: "Patient",
+    heroTreatments: "IUI · IVF · ICSI",
     coreSpecialties: "Core Specialties",
     readFullStory: "Read Full Story",
     viewAllServices: "View All Services",
@@ -45,11 +48,15 @@ export const en: SiteMessages = {
   },
   hero: {
     trustBadge: "Trusted Women's Healthcare in Hyderabad",
-    headline: "Trusted Women's Healthcare, Fertility & Pregnancy Care in Hyderabad",
+    headlineLine1: "Hyderabad\u2019s Trusted",
+    headlineLine2: "IVF & Fertility",
+    headlineLine3Lead: "Care \u2014",
+    headlineLine3Tail: " For Every",
+    headlineLine4: "Family\u2019s Journey",
     subtitle:
-      "Personalized gynecology, fertility, pregnancy, and pediatric care backed by more than 30 years of clinical experience. Supporting women and families through every stage of life with compassionate, evidence-based healthcare.",
+      "Quality fertility treatment at costs every family can afford. 40 years of clinical experience in IVF, IUI, ICSI, and high-risk pregnancy care.",
     primaryCta: "Book Appointment",
-    secondaryCta: "Explore Services",
+    secondaryCta: "Explore Treatments",
   },
   trustStory: {
     missionBadge: "About",
@@ -141,7 +148,7 @@ export const en: SiteMessages = {
       "Expert care across fertility, pregnancy, women's health, and pediatrics — tailored to support you and your family at every stage.",
     viewAllLabel: "View All Services",
     trustBadges: [
-      "30+ Years Experience",
+      "40+ Years Experience",
       "10,000+ Families Served",
       "98% Patient Satisfaction",
       "4 Core Specialties",
@@ -256,6 +263,18 @@ export const en: SiteMessages = {
     viewAll: "More questions on our contact page",
     items: [
       {
+        q: "Is Sulochana Hospital in Madinaguda the same as Dr. Sulochana's Hospital?",
+        a: "Yes. Sulochana Hospital and Dr. Sulochana's Hospital refer to the same clinic at Kalyan Tulasiram Chambers, Madinaguda, Hyderabad, led by Dr. Sulochana Mortha.",
+      },
+      {
+        q: "Who is the gynecologist at Dr. Sulochana's Hospital, Madinaguda?",
+        a: "Dr. Sulochana Mortha (Dr. M. Sulochana Mortha) is the chief gynecologist and obstetrician with 40+ years of experience in gynecology, fertility, and pregnancy care.",
+      },
+      {
+        q: "How do I find a gynecologist near Madinaguda or Hafeezpet?",
+        a: "Dr. Sulochana's Hospital is at Deepti Bus Stop, Madinaguda (near Hafeezpet), Hyderabad. Book a gynecology or fertility consultation by phone, WhatsApp, or our online appointment form.",
+      },
+      {
         q: "How do I book my first consultation?",
         a: "Fill out the appointment form on our contact page, call us directly, or visit Dr. Sulochana's Hospital in Madinaguda to schedule your consultation.",
       },
@@ -309,13 +328,18 @@ export const en: SiteMessages = {
     pregnancyCare: "Pregnancy Care",
     pcosManagement: "PCOS Management",
     gynecologyConsultation: "Gynecology Consultation",
+    highRiskPregnancy: "High-Risk Pregnancy",
+    fibroidsTreatment: "Fibroids Treatment",
+    menopauseManagement: "Menopause Management",
+    normalDelivery: "Normal Delivery",
+    cSectionCare: "C-Section Care",
     womensHealth: "Women's Health",
     pediatricCare: "Pediatric Care",
     privacyPolicy: "Privacy Policy",
     terms: "Terms",
     accessibility: "Accessibility",
     copyright: "All rights reserved.",
-    trustBadges: ["98% Patient Satisfaction", "30+ Years Experience", "10,000+ Families Served"],
+    trustBadges: ["98% Patient Satisfaction", "40+ Years Experience", "10,000+ Families Served"],
     hours: ["Mon – Sat: 7:00am – 7:30pm", "Sun: 7:00am – 4:30pm"],
     emergency: "Emergency: 098498 61089",
   },
@@ -477,7 +501,7 @@ export const en: SiteMessages = {
       ],
     },
     trustBadges: [
-      "30+ Years Experience",
+      "40+ Years Experience",
       "IVF · IUI · ICSI",
       "Egg Freezing Available",
       "Two Hyderabad Locations",
@@ -622,7 +646,7 @@ export const en: SiteMessages = {
       attribution: "— Dr. M. Sulochana Mortha",
     },
     aboutLead:
-      "Dr. M. Sulochana (Sulochana Mortha) is a veteran Gynaecologist and Obstetrician based in Hyderabad with over 35 years of extensive clinical and academic experience.",
+      "Dr. M. Sulochana (Sulochana Mortha) is a veteran Gynaecologist and Obstetrician based in Hyderabad with over 40 years of extensive clinical and academic experience.",
     aboutDetail:
       "She is highly regarded for patient-centric care, detailed explanations of root causes, and extensive public medical counselling. As a former Professor at Osmania Medical College (1993–2016), she has hosted 50+ live television episodes on women's health across HMTV, T News, and TV5. She currently serves as Chief Consultant Gynaecologist at Dr. Sulochana's Hospital, Madinaguda, and as a panel consultant at GVK Health Hub, Jubilee Hills.",
     appointmentNote:
@@ -676,7 +700,7 @@ export const en: SiteMessages = {
           "MD / DGO — Obstetrics & Gynaecology, Osmania Medical College, Hyderabad (1993)",
         ],
         experience: [
-          "35+ years in obstetrics, gynaecology, and infertility",
+          "40+ years in obstetrics, gynaecology, and infertility",
           "Professor, Osmania Medical College, Hyderabad (1993–2016)",
           "Chief Consultant — Dr. Sulochana's Hospital, Madinaguda",
           "Panel Consultant — GVK Health Hub, Jubilee Hills",

@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { ArrowLeft, Play } from "lucide-react";
 import ContentCTA from "@/components/content/ContentCTA";
 import ContentFaq from "@/components/content/ContentFaq";
 import RelatedContent from "@/components/content/RelatedContent";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { youtubeWatchUrl } from "@/content/videos";
 import type { VideoContent } from "@/content/types";
 
@@ -16,17 +15,18 @@ export default function VideoPageContent({ video }: VideoPageContentProps) {
   return (
     <article className="content-page">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-12">
-        <Link href="/knowledge" className="content-back-link">
-          <ArrowLeft className="h-4 w-4" aria-hidden />
-          Back to Knowledge Centre
-        </Link>
+        <Breadcrumbs
+          className="mb-4"
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Knowledge Centre", path: "/knowledge" },
+            { name: video.title, path: sourcePage },
+          ]}
+        />
 
         <header className="content-hero content-hero--video">
           <div className="content-hero-copy">
-            <span className="content-eyebrow">
-              <Play className="h-3 w-3" aria-hidden />
-              {video.category}
-            </span>
+            <span className="content-eyebrow">{video.category}</span>
             <h1 className="content-title">{video.title}</h1>
             <p className="content-description">{video.description}</p>
             <p className="content-meta">Presented by {video.author}</p>

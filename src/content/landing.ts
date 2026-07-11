@@ -122,7 +122,7 @@ export const trustStory = {
     },
   ],
   metrics: [
-    { value: 30, suffix: "+", label: "Years Experience", numeric: true },
+    { value: 40, suffix: "+", label: "Years Experience", numeric: true },
     { value: 10000, suffix: "+", label: "Families Served", numeric: true },
     { value: 98, suffix: "%", label: "Patient Satisfaction", numeric: true },
     { value: 4, suffix: "", label: "Core Specialties", numeric: true },
@@ -216,7 +216,7 @@ export const servicesSection = {
   viewAllHref: "/services",
   viewAllLabel: "View All Services",
   trustBadges: [
-    "30+ Years Experience",
+      "40+ Years Experience",
     "10,000+ Families Served",
     "98% Patient Satisfaction",
     "4 Core Specialties",
@@ -425,7 +425,7 @@ export const footerContent = {
     "Dr. Sulochana is committed to delivering compassionate women's healthcare, fertility services, pregnancy care, and pediatric support for families across Hyderabad.",
   trustBadges: [
     { icon: "star" as const, label: "98% Patient Satisfaction" },
-    { icon: "award" as const, label: "30+ Years Experience" },
+    { icon: "award" as const, label: "40+ Years Experience" },
     { icon: "families" as const, label: "10,000+ Families Served" },
   ],
   contact: {
@@ -456,10 +456,15 @@ export const footerContent = {
       { name: "Pregnancy Care", href: "/treatments/pregnancy-care" },
       { name: "PCOS Management", href: "/treatments/pcos-management" },
       { name: "Gynecology Consultation", href: "/treatments/gynecology-consultation" },
+      { name: "High-Risk Pregnancy", href: "/treatments/high-risk-pregnancy" },
+      { name: "Fibroids Treatment", href: "/treatments/fibroids" },
+      { name: "Menopause Management", href: "/treatments/menopause" },
+      { name: "Normal Delivery", href: "/treatments/normal-delivery" },
+      { name: "C-Section Care", href: "/treatments/c-section" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "/contact#privacy" },
-      { name: "Terms", href: "/contact#terms" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms", href: "/terms" },
       { name: "Accessibility", href: "/contact#accessibility" },
     ],
   },
@@ -560,16 +565,43 @@ export const heroCopy = {
   headline: "Trusted Women's Healthcare, Fertility & Pregnancy Care in Hyderabad",
   headlineAccent: ["Healthcare", "Hyderabad"],
   subtitle:
-    "Personalized gynecology, fertility, pregnancy, and pediatric care backed by more than 30 years of clinical experience. Supporting women and families through every stage of life with compassionate, evidence-based healthcare.",
+    `Personalized gynecology, fertility, pregnancy, and pediatric care backed by ${doctor.yearsExperienceShort} of clinical experience. Supporting women and families through every stage of life with compassionate, evidence-based healthcare.`,
   primaryCta: "Book Appointment",
   secondaryCta: "Explore Services",
 } as const;
 
 export const heroMetrics = [
-  { value: 35, suffix: "+", label: "Years Experience", display: "35+" },
-  { value: 10000, suffix: "+", label: "Families Served", display: "10,000+" },
-  { value: 98, suffix: "%", label: "Patient Satisfaction", display: "98%" },
-  { value: 4, suffix: "", label: "Core Specialties", display: "4" },
+  {
+    id: "experience",
+    icon: "achievement",
+    value: 40,
+    suffix: "+",
+    labelKey: "yearsExperience",
+    variant: "featured",
+  },
+  {
+    id: "babies",
+    icon: "born",
+    value: 20000,
+    suffix: "+",
+    labelKey: "babiesBorn",
+    variant: "default",
+  },
+  {
+    id: "satisfaction",
+    icon: "satisfaction",
+    value: 98,
+    suffix: "%",
+    labelKey: "patientSatisfaction",
+    primarySuffixKey: "heroMetricPatient",
+    variant: "default",
+  },
+  {
+    id: "treatments",
+    icon: "ivf",
+    labelKey: "heroTreatments",
+    variant: "static",
+  },
 ] as const;
 
 export const heroFloatingCards = [

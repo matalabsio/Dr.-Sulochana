@@ -6,6 +6,7 @@ import { images } from "@/content/images";
 import { Phone } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { doctor } from "@/content/doctor";
+import { trackBookAppointmentClick, trackPhoneClick } from "@/lib/analytics";
 
 export default function CTABanner() {
   return (
@@ -23,13 +24,27 @@ export default function CTABanner() {
               here to support you with compassionate, expert care at every step.
             </p>
             <div className="about-cta-banner-actions">
-              <Link href="/contact" className="about-cta-banner-btn-primary">
+              <Link
+                href="/contact"
+                className="about-cta-banner-btn-primary"
+                onClick={() =>
+                  trackBookAppointmentClick({
+                    ctaLocation: "cta_banner",
+                    destination: "/contact",
+                  })
+                }
+              >
                 Book An Appointment
               </Link>
               <a
                 href="tel:+919849861089"
                 aria-label="Call the clinic at 098498 61089"
                 className="about-cta-banner-btn-phone"
+                onClick={() =>
+                  trackPhoneClick({
+                    ctaLocation: "cta_banner",
+                  })
+                }
               >
                 <Phone className="h-5 w-5" strokeWidth={1.458} aria-hidden />
               </a>

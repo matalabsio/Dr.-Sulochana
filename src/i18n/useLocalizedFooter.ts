@@ -46,6 +46,11 @@ export function useLocalizedFooter() {
           if (link.name === "Pregnancy Care") return { ...link, name: t.pregnancyCare };
           if (link.name === "PCOS Management") return { ...link, name: t.pcosManagement };
           if (link.name === "Gynecology Consultation") return { ...link, name: t.gynecologyConsultation };
+          if (link.name === "High-Risk Pregnancy") return { ...link, name: t.highRiskPregnancy };
+          if (link.name === "Fibroids Treatment") return { ...link, name: t.fibroidsTreatment };
+          if (link.name === "Menopause Management") return { ...link, name: t.menopauseManagement };
+          if (link.name === "Normal Delivery") return { ...link, name: t.normalDelivery };
+          if (link.name === "C-Section Care") return { ...link, name: t.cSectionCare };
           return link;
         }),
         legal: base.nav.legal.map((link) => {

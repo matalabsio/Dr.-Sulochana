@@ -3,12 +3,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MeetSpecialists from "@/components/landing/MeetSpecialists";
 import PreFooterCTA from "@/components/landing/PreFooterCTA";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { pageSeo } from "@/lib/seo/keywords";
 
-export const metadata: Metadata = {
-  title: "Meet Our Fertility Specialists | Dr. Sulochana's Hospital — Hyderabad",
-  description:
-    "Meet Dr. M. Sulochana and our fertility team — experienced OBGYN, IVF, and reproductive medicine specialists at Madinaguda, Hyderabad.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: pageSeo.specialists.title,
+  description: pageSeo.specialists.description,
+  path: "/specialists",
+});
 
 export default function SpecialistsPage() {
   return (

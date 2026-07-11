@@ -154,9 +154,9 @@ export const treatments: TreatmentContent[] = [
   },
   {
     slug: "gynecology-consultation",
-    title: "Gynecology Consultation in Hyderabad",
+    title: "Gynecologist in Hyderabad — Women's Health Consultation",
     description:
-      "General gynecology care — menstrual disorders, infections, menopause, and preventive women's health at Dr. Sulochana's Hospital, Madinaguda.",
+      "Book a gynecology consultation at Dr. Sulochana's Hospital (Sulochana Hospital), Madinaguda. Expert gynecologist for menstrual disorders, PCOS, menopause, and preventive women's health.",
     category: "Women's Health",
     heroImage: images.knowledge.bio,
     sections: [
@@ -245,6 +245,194 @@ export const treatments: TreatmentContent[] = [
     relatedArticles: ["investigations-during-pregnancy", "abdominal-pain-during-pregnancy"],
     relatedTreatments: ["pregnancy-care"],
     relatedVideos: [],
+  },
+  {
+    slug: "fibroids",
+    title: "Fibroids Treatment in Hyderabad",
+    description:
+      "Expert evaluation and management of uterine fibroids — medical therapy, monitoring, and surgical planning at Dr. Sulochana's Hospital, Madinaguda.",
+    category: "Women's Health",
+    heroImage: images.articles.womensReproductiveHealth,
+    sections: [
+      {
+        title: "Understanding Uterine Fibroids",
+        body: "Fibroids are non-cancerous growths in the uterus that may cause heavy periods, pelvic pressure, pain, or fertility concerns. Many women have fibroids without symptoms, while others need active management based on size, location, and reproductive goals.",
+      },
+      {
+        title: "Diagnosis and Monitoring",
+        body: "We evaluate symptoms, perform clinical examination, and use pelvic ultrasound or other imaging when needed. Regular monitoring helps determine whether conservative management is appropriate or if intervention is required.",
+      },
+      {
+        title: "Treatment Options",
+        body: "Treatment may include medications to control bleeding, hormonal therapies, or surgical options such as myomectomy or hysterectomy when indicated. Plans are individualized — preserving fertility is prioritized when that is your goal.",
+      },
+      {
+        title: "When to Seek Care",
+        body: "Book a consultation if you have heavy or prolonged periods, anemia, pelvic pain, difficulty conceiving, or a known fibroid that is growing. Early specialist input helps avoid complications and unnecessary worry.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Are all fibroids treated with surgery?",
+        a: "No. Many fibroids are managed with observation or medication. Surgery is considered when symptoms significantly affect quality of life or fertility.",
+      },
+      {
+        q: "Can I get pregnant with fibroids?",
+        a: "Many women conceive successfully. Size and location matter — submucosal fibroids may affect implantation and are often treated before pregnancy planning.",
+      },
+      {
+        q: "What tests diagnose fibroids?",
+        a: "Pelvic examination and transvaginal ultrasound are most common. MRI or hysteroscopy may be advised for complex cases.",
+      },
+      {
+        q: "Do fibroids turn into cancer?",
+        a: "Uterine fibroids are benign. Rapid growth or unusual features may warrant further evaluation, but cancer transformation is rare.",
+      },
+    ],
+    relatedArticles: ["family-planning-contraception"],
+    relatedTreatments: ["gynecology-consultation", "pregnancy-care"],
+    relatedVideos: ["womens-health-and-wellness"],
+  },
+  {
+    slug: "menopause",
+    title: "Menopause Management in Hyderabad",
+    description:
+      "Personalized menopause care — hot flashes, sleep changes, bone health, and hormone therapy counselling at Dr. Sulochana's Hospital.",
+    category: "Women's Health",
+    heroImage: images.knowledge.morning,
+    sections: [
+      {
+        title: "Navigating Menopause",
+        body: "Menopause marks the end of menstrual cycles and brings hormonal changes that can affect sleep, mood, metabolism, bone density, and cardiovascular health. Symptoms vary widely — some women need minimal support, others benefit from structured medical care.",
+      },
+      {
+        title: "Symptom Assessment",
+        body: "We review hot flashes, night sweats, vaginal dryness, mood changes, weight shifts, and sleep disruption. Associated conditions such as thyroid disorders or anemia are excluded before planning treatment.",
+      },
+      {
+        title: "Treatment and Lifestyle Support",
+        body: "Options include lifestyle counselling, non-hormonal medications, localized estrogen therapies, and systemic hormone replacement when clinically appropriate. Bone health and cardiovascular risk are discussed as part of long-term wellness.",
+      },
+      {
+        title: "Ongoing Follow-Up",
+        body: "Menopause care is not a one-time visit. We adjust treatment as symptoms evolve and recommend periodic screening aligned with your age and medical history.",
+      },
+    ],
+    faqs: [
+      {
+        q: "At what age does menopause usually begin?",
+        a: "The average age is around 51 in India, but perimenopause can start years earlier with irregular cycles and symptoms.",
+      },
+      {
+        q: "Is hormone therapy safe?",
+        a: "For many healthy women, short-term hormone therapy relieves symptoms effectively. Risks and benefits are individualized based on age, history, and symptom severity.",
+      },
+      {
+        q: "Can menopause affect bone health?",
+        a: "Yes. Declining estrogen increases osteoporosis risk. Calcium, vitamin D, weight-bearing exercise, and screening are important.",
+      },
+      {
+        q: "Do I still need gynecology check-ups after menopause?",
+        a: "Yes. Preventive screening, pelvic health, and any postmenopausal bleeding should be evaluated promptly.",
+      },
+    ],
+    relatedArticles: ["family-planning-contraception"],
+    relatedTreatments: ["gynecology-consultation"],
+    relatedVideos: ["womens-health-and-wellness"],
+  },
+  {
+    slug: "normal-delivery",
+    title: "Normal Delivery in Hyderabad",
+    description:
+      "Childbirth preparation, labor support, and vaginal delivery planning with an experienced obstetric team at Dr. Sulochana's Hospital.",
+    category: "Pregnancy",
+    heroImage: images.motherhood,
+    sections: [
+      {
+        title: "Preparing for Vaginal Birth",
+        body: "Normal delivery is the goal for many low-risk pregnancies. Antenatal visits build confidence, address fears, and prepare you for labor signs, pain management options, and hospital admission.",
+      },
+      {
+        title: "Labor and Delivery Support",
+        body: "Our obstetric team monitors fetal wellbeing, guides progression through labor, and supports informed decisions about pain relief, positions, and timing of interventions only when medically necessary.",
+      },
+      {
+        title: "Recovery After Birth",
+        body: "Postpartum care includes monitoring for bleeding, breastfeeding support, wound care if episiotomy was needed, and guidance on rest, nutrition, and when to resume activity.",
+      },
+      {
+        title: "Who Can Plan for Normal Delivery",
+        body: "Most uncomplicated pregnancies are suitable for vaginal birth. Previous cesarean does not always exclude it — discuss VBAC eligibility with your obstetrician during antenatal visits.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How do I know labor has started?",
+        a: "Regular painful contractions, breaking of waters, or bleeding require assessment. Contact the hospital when contractions are sustained or if you are unsure.",
+      },
+      {
+        q: "Is pain relief available during normal delivery?",
+        a: "Yes. Options include breathing techniques, epidural analgesia, and other methods depending on hospital facilities and clinical suitability.",
+      },
+      {
+        q: "How long does labor usually last?",
+        a: "First labors often take longer. Duration varies widely; your team monitors progress and intervenes only when needed for safety.",
+      },
+      {
+        q: "When is cesarean recommended instead?",
+        a: "Fetal distress, placenta concerns, breech presentation, or failure to progress may necessitate cesarean. The decision is made collaboratively when safety requires it.",
+      },
+    ],
+    relatedArticles: ["confirmation-of-pregnancy", "investigations-during-pregnancy"],
+    relatedTreatments: ["pregnancy-care", "high-risk-pregnancy"],
+    relatedVideos: ["prenatal-care-essentials"],
+  },
+  {
+    slug: "c-section",
+    title: "C-Section Care in Hyderabad",
+    description:
+      "Planned and emergency cesarean delivery, recovery guidance, and scar care with experienced obstetric support at Dr. Sulochana's Hospital.",
+    category: "Pregnancy",
+    heroImage: images.knowledge.postnatal,
+    sections: [
+      {
+        title: "When Cesarean Is Recommended",
+        body: "Cesarean section may be planned for breech presentation, placenta previa, previous cesarean, or maternal conditions. Emergency cesarean is performed when vaginal delivery poses risk to mother or baby during labor.",
+      },
+      {
+        title: "What to Expect",
+        body: "Preoperative counselling covers anesthesia, timing, and hospital stay. The procedure is performed in a sterile operating environment with neonatal support ready at delivery.",
+      },
+      {
+        title: "Recovery and Wound Care",
+        body: "Postoperative care focuses on pain control, early mobilization, infection prevention, and breastfeeding initiation. Incision healing is monitored at follow-up visits.",
+      },
+      {
+        title: "Future Pregnancies",
+        body: "We discuss interval between pregnancies, scar integrity, and whether vaginal birth after cesarean (VBAC) may be an option in subsequent pregnancies.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long is hospital stay after C-section?",
+        a: "Most mothers stay 2–4 days depending on recovery, pain control, and baby's health.",
+      },
+      {
+        q: "Is cesarean more painful than normal delivery?",
+        a: "Pain patterns differ. Cesarean recovery involves incision healing; effective pain medication and early movement aid recovery.",
+      },
+      {
+        q: "When can I drive or exercise after C-section?",
+        a: "Timelines vary. Light activity may resume within weeks; strenuous exercise and driving typically wait until your obstetrician confirms healing.",
+      },
+      {
+        q: "Can I breastfeed after cesarean?",
+        a: "Yes. Skin-to-skin contact and breastfeeding are encouraged as soon as you are comfortable, often within hours of delivery.",
+      },
+    ],
+    relatedArticles: ["safe-medication-in-pregnancy", "investigations-during-pregnancy"],
+    relatedTreatments: ["pregnancy-care", "high-risk-pregnancy", "normal-delivery"],
+    relatedVideos: ["high-risk-pregnancy-care", "prenatal-care-essentials"],
   },
 ];
 

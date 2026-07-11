@@ -20,17 +20,19 @@ export default function TestimonialMarqueeBanner({
     >
       <p className="sr-only">{testimonialMarquee.ariaLabel}</p>
 
-      <div className="testimonial-marquee-viewport">
-        <ul className="testimonial-marquee-track" aria-hidden>
-          {loopItems.map((text, index) => (
-            <li key={`${text}-${index}`} className="testimonial-marquee-item">
-              <span className="testimonial-marquee-star" aria-hidden>
-                ★
-              </span>
-              <span className="testimonial-marquee-text">{text}</span>
-            </li>
-          ))}
-        </ul>
+      <div className="testimonial-marquee-inner">
+        <div className="testimonial-marquee-viewport">
+          <ul className="testimonial-marquee-track" aria-hidden>
+            {loopItems.map((text, index) => (
+              <li key={`${text}-${index}`} className="testimonial-marquee-item">
+                <span className="testimonial-marquee-star" aria-hidden>
+                  ★
+                </span>
+                <span className="testimonial-marquee-text">{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

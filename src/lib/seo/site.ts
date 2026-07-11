@@ -1,15 +1,33 @@
 import { contactPage } from "@/content/contact";
 import { doctor } from "@/content/doctor";
 import { images } from "@/content/images";
+import { brandNames, pageSeo } from "@/lib/seo/keywords";
 
-const DEFAULT_SITE_URL = contactPage.contactInfo.websiteHref;
+export const SITE_URL = "https://www.drsulochana.online";
+
+const DEPRECATED_SITE_URLS = new Set([
+  "https://www.drsulochanahospital.com",
+  "https://drsulochanahospital.com",
+  "http://www.drsulochanahospital.com",
+  "http://drsulochanahospital.com",
+]);
+
+function normalizeSiteUrl(url: string): string {
+  return url.replace(/\/$/, "");
+}
 
 export function getSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (configured) {
-    return configured.replace(/\/$/, "");
+  if (!configured) {
+    return SITE_URL;
   }
-  return DEFAULT_SITE_URL;
+
+  const normalized = normalizeSiteUrl(configured);
+  if (DEPRECATED_SITE_URLS.has(normalized)) {
+    return SITE_URL;
+  }
+
+  return normalized;
 }
 
 export function absoluteUrl(path: string): string {
@@ -19,13 +37,14 @@ export function absoluteUrl(path: string): string {
 
 export const siteConfig = {
   name: doctor.hospital,
-  shortName: "Dr. Sulochana's Hospital",
-  description:
-    "Expert fertility, IVF, pregnancy care, and gynecology at Dr. Sulochana's Hospital, Madinaguda, Hyderabad.",
+  shortName: brandNames.primary,
+  alternateNames: brandNames.alternate,
+  description: pageSeo.home.description,
   defaultOgImage: images.pregnantCouple,
   locale: "en_IN",
   phone: contactPage.contactInfo.phone,
   phoneHref: contactPage.contactInfo.phoneHref,
   email: contactPage.contactInfo.email,
   address: doctor.address.full,
+  areaServed: ["Hyderabad", "Madinaguda", "Hafeezpet", "Ramakrishna Nagar"],
 } as const;

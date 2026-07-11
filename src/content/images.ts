@@ -22,7 +22,7 @@ export const assetPaths = {
     pregnantWomanOrange: "/illustrations/pregnant-woman-orange.png",
     coupleFloor: "/illustrations/couple-floor.png",
     pregnantWomanTeal: "/illustrations/pregnant-woman-teal.png",
-    heroCouple: "/illustrations/image.png",
+    heroCouple: "/illustrations/hero-couple.png",
   },
 } as const;
 

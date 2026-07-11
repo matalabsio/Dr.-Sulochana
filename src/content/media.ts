@@ -4,7 +4,6 @@ import {
   type VideoSource,
 } from "@/content/videos";
 import { aboutProfessionalProfiles } from "@/content/aboutPage";
-
 export type MediaLinkItem = {
   title: string;
   description: string;

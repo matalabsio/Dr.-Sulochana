@@ -1,12 +1,14 @@
 /** Factual copy for Dr. Sulochana Mortha and clinic locations */
+const YEARS_EXPERIENCE_SHORT = "over 40 years";
+
 export const doctor = {
   name: "Dr. Sulochana Mortha",
   nameFormal: "Dr. M. Sulochana Mortha",
   nameAbout: "Dr. Sulochana Mortha",
   hospital: "Dr. Sulochana's Hospital",
   hospitalTagline: "OBGYN · INFERTILITY · PAEDIATRICS",
-  yearsExperience: "35+",
-  yearsExperienceShort: "over 35 years",
+  yearsExperience: "40+",
+  yearsExperienceShort: YEARS_EXPERIENCE_SHORT,
 
   address: {
     area: "Madinaguda, Deepti Bus Stop",
@@ -45,9 +47,9 @@ export const doctor = {
   },
 
   bio: {
-    home: "Dr. Sulochana Mortha is a veteran Obstetrician, Gynaecologist, and Infertility Specialist in Hyderabad with over 35 years of clinical and academic experience. She is known for patient-centric care, detailed explanations of root causes, and extensive public medical counselling.",
+    home: `Dr. Sulochana Mortha is a veteran Obstetrician, Gynaecologist, and Infertility Specialist in Hyderabad with ${YEARS_EXPERIENCE_SHORT} of clinical and academic experience. She is known for patient-centric care, detailed explanations of root causes, and extensive public medical counselling.`,
     aboutLead:
-      "Dr. M. Sulochana (Sulochana Mortha) is a highly regarded Gynaecologist and Obstetrician based in Hyderabad with over 35 years of extensive clinical and academic experience.",
+      `Dr. M. Sulochana (Sulochana Mortha) is a highly regarded Gynaecologist and Obstetrician based in Hyderabad with ${YEARS_EXPERIENCE_SHORT} of extensive clinical and academic experience.`,
     aboutDetail:
       "She is known for patient-centric care, clear explanations of root causes, and extensive public medical counselling. As a former Professor at Osmania Medical College (1993–2016), she has hosted 50+ live television episodes on women's health across HMTV, T News, and TV5. She currently serves as Chief Consultant Gynaecologist at Dr. Sulochana's Hospital, Madinaguda, and as a panel consultant at GVK Health Hub, Jubilee Hills.",
     clinic:

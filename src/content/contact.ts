@@ -35,8 +35,8 @@ export const contactPage = {
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.28956195692!2d78.33755437540552!3d17.493685583411704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9261c0000001%3A0x955b94395b5c658a!2sSulochana%20Hospital!5e0!3m2!1sen!2sin!4v1780182857628!5m2!1sen!2sin",
     hoursTitle: "Working Hours",
     hours: [
-      "Monday – Saturday: 9:00 AM – 8:00 PM",
-      "Sunday: By Appointment Only",
+      "Monday – Saturday: 7:00 AM – 7:30 PM",
+      "Sunday: 7:00 AM – 4:30 PM",
     ] as const,
   },
   contactInfo: {
@@ -44,10 +44,10 @@ export const contactPage = {
     phone: "+91 98498 61089",
     phoneDisplay: footerContent.contact.phone,
     phoneHref: footerContent.contact.phoneHref,
-    email: "info@drsulochanahospital.com",
-    emailHref: "mailto:info@drsulochanahospital.com",
-    website: "www.drsulochanahospital.com",
-    websiteHref: "https://www.drsulochanahospital.com",
+    email: "care@drsulochana.com",
+    emailHref: "mailto:care@drsulochana.com",
+    website: "www.drsulochana.online",
+    websiteHref: "https://www.drsulochana.online",
   },
   trust: {
     title: "Why Patients Trust Us",
@@ -69,6 +69,10 @@ export const contactPage = {
     eyebrow: "Common Questions",
     title: "Frequently Asked Questions",
     items: [
+      {
+        q: "Is Sulochana Hospital the same as Dr. Sulochana's Hospital in Madinaguda?",
+        a: "Yes — both names refer to our hospital at Kalyan Tulasiram Chambers, Deepti Bus Stop, Madinaguda, Hyderabad.",
+      },
       {
         q: "How do I book my first consultation?",
         a: "Fill in the appointment form on our contact page — it opens WhatsApp with your details. You can also call us or visit the hospital directly.",

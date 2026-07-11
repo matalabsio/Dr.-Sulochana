@@ -1,7 +1,7 @@
 export const siteLanguages = [
-  { code: "te", label: "TE", ariaLabel: "Telugu" },
+  { code: "te", label: "తె", ariaLabel: "Telugu" },
   { code: "en", label: "EN", ariaLabel: "English" },
-  { code: "hi", label: "HI", ariaLabel: "Hindi" },
+  { code: "hi", label: "हि", ariaLabel: "Hindi" },
 ] as const;
 
 export type SiteLanguageCode = (typeof siteLanguages)[number]["code"];
