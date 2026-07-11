@@ -11,6 +11,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { HERO_SPRING, heroFloat, heroSpringItem, heroSpringStagger } from "@/lib/motion";
 import { trackBookAppointmentClick } from "@/lib/analytics";
+import SplitText from "@/components/animations/SplitText";
 import FloatingIllustration from "@/components/landing/FloatingIllustration";
 import { LoveFlowBackdrop } from "@/components/landing/LoveFlowDecor";
 
@@ -94,24 +95,98 @@ export default function Hero() {
               {heroCopy.trustBadge}
             </motion.p>
 
-            <motion.h1
-              variants={reduced ? undefined : heroSpringItem}
-              className="hero-headline hero-headline--minimal hero-headline--landing"
-            >
-              <span className="hero-headline-row hero-headline-row--1 hero-headline-accent">
-                {heroCopy.headlineLine1}
-              </span>
-              <span className="hero-headline-row hero-headline-row--2 hero-headline-accent">
-                {heroCopy.headlineLine2}
-              </span>
-              <span className="hero-headline-row hero-headline-row--3">
-                <span className="hero-headline-accent">{heroCopy.headlineLine3Lead}</span>
-                <span className="hero-headline-continued">{heroCopy.headlineLine3Tail}</span>
-              </span>
-              <span className="hero-headline-row hero-headline-row--4 hero-headline-continued">
-                {heroCopy.headlineLine4}
-              </span>
-            </motion.h1>
+            {reduced ? (
+              <h1 className="hero-headline hero-headline--minimal hero-headline--landing">
+                <span className="hero-headline-row hero-headline-row--1 hero-headline-accent">
+                  {heroCopy.headlineLine1}
+                </span>
+                <span className="hero-headline-row hero-headline-row--2 hero-headline-accent">
+                  {heroCopy.headlineLine2}
+                </span>
+                <span className="hero-headline-row hero-headline-row--3">
+                  <span className="hero-headline-accent">{heroCopy.headlineLine3Lead}</span>
+                  <span className="hero-headline-continued">{heroCopy.headlineLine3Tail.trimStart()}</span>
+                </span>
+                <span className="hero-headline-row hero-headline-row--4 hero-headline-continued">
+                  {heroCopy.headlineLine4}
+                </span>
+              </h1>
+            ) : (
+              <h1 className="hero-headline hero-headline--minimal hero-headline--landing">
+                <SplitText
+                  tag="span"
+                  text={heroCopy.headlineLine1}
+                  className="hero-headline-row hero-headline-row--1 hero-headline-accent hero-split-line"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={35}
+                  duration={0.65}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 36 }}
+                  to={{ opacity: 1, y: 0 }}
+                  animateOnMount
+                  startDelay={0}
+                />
+                <SplitText
+                  tag="span"
+                  text={heroCopy.headlineLine2}
+                  className="hero-headline-row hero-headline-row--2 hero-headline-accent hero-split-line"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={35}
+                  duration={0.65}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 36 }}
+                  to={{ opacity: 1, y: 0 }}
+                  animateOnMount
+                  startDelay={0.18}
+                />
+                <span className="hero-headline-row hero-headline-row--3">
+                  <SplitText
+                    tag="span"
+                    text={heroCopy.headlineLine3Lead}
+                    className="hero-headline-accent hero-split-line hero-split-line--inline"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={35}
+                    duration={0.65}
+                    ease="power3.out"
+                    from={{ opacity: 0, y: 36 }}
+                    to={{ opacity: 1, y: 0 }}
+                    animateOnMount
+                    startDelay={0.36}
+                  />
+                  <SplitText
+                    tag="span"
+                    text={heroCopy.headlineLine3Tail.trimStart()}
+                    className="hero-headline-continued hero-split-line hero-split-line--inline"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={35}
+                    duration={0.65}
+                    ease="power3.out"
+                    from={{ opacity: 0, y: 36 }}
+                    to={{ opacity: 1, y: 0 }}
+                    animateOnMount
+                    startDelay={0.48}
+                  />
+                </span>
+                <SplitText
+                  tag="span"
+                  text={heroCopy.headlineLine4}
+                  className="hero-headline-row hero-headline-row--4 hero-headline-continued hero-split-line"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={35}
+                  duration={0.65}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 36 }}
+                  to={{ opacity: 1, y: 0 }}
+                  animateOnMount
+                  startDelay={0.62}
+                />
+              </h1>
+            )}
 
             <motion.p
               variants={reduced ? undefined : heroSpringItem}
@@ -179,7 +254,24 @@ export default function Hero() {
                     </span>
                     <div className="hero-metric-copy">
                       {isStatic ? (
-                        <p className="hero-metric-primary hero-metric-primary--static">{label}</p>
+                        (() => {
+                          const parts = label.split(" · ");
+                          if (parts.length < 2) {
+                            return (
+                              <p className="hero-metric-primary hero-metric-primary--static">{label}</p>
+                            );
+                          }
+                          return (
+                            <>
+                              <p className="hero-metric-primary hero-metric-primary--static">
+                                {parts.slice(0, -1).join(" · ")} ·
+                              </p>
+                              <p className="hero-metric-secondary hero-metric-secondary--static">
+                                {parts[parts.length - 1]}
+                              </p>
+                            </>
+                          );
+                        })()
                       ) : (
                         <>
                           <p className="hero-metric-primary">

@@ -30,11 +30,26 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: assetPaths.brand.logo, type: "image/png", sizes: "492x364" },
+      { url: assetPaths.brand.favicon, type: "image/svg+xml" },
+      { url: assetPaths.brand.faviconIco, sizes: "any" },
       { url: "/icon", sizes: "32x32", type: "image/png" },
+      { url: assetPaths.brand.icon192, sizes: "192x192", type: "image/png" },
+      { url: assetPaths.brand.icon512, sizes: "512x512", type: "image/png" },
     ],
-    shortcut: assetPaths.brand.logo,
+    shortcut: [{ url: assetPaths.brand.faviconIco }],
     apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
+  applicationName: siteConfig.shortName,
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.shortName,
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
   },
 };
 

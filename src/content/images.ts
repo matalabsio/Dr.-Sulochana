@@ -14,6 +14,11 @@ export const assetPaths = {
   brand: {
     logo: "/brand/logo.png",
     favicon: "/brand/favicon.svg",
+    faviconIco: "/favicon.ico",
+    icon32: "/brand/icon-32.png",
+    icon192: "/brand/icon-192.png",
+    icon512: "/brand/icon-512.png",
+    appleTouchIcon: "/brand/apple-touch-icon.png",
   },
   illustrations: {
     pregnantCouple: "/illustrations/pregnant-couple.png",
