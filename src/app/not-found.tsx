@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Page Not Found",
+  description: "The page you requested could not be found on Dr. Sulochana's Hospital website.",
+  path: "/404",
+  noIndex: true,
+});
 
 const topServices = [
   { name: "Fertility Treatment", href: "/treatments/fertility-treatment" },

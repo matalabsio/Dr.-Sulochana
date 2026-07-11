@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     path: "/",
   }),
   metadataBase: new URL(getSiteUrl()),
+  verification: {
+    google: "PM0mXBpVFjeTzSFx5QT9Xj8vJrnYCi5RXzxkmmarDZ0",
+  },
   icons: {
     icon: [
       { url: assetPaths.brand.logo, type: "image/png", sizes: "492x364" },

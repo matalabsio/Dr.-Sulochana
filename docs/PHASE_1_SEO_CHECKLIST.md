@@ -20,6 +20,7 @@ These fixes are in the codebase and take effect after deploy + env vars:
 | Schema opening hours | ✅ | Mon–Sat 07:00–19:30, Sun 07:00–16:30 (matches footer) |
 | SearchAction schema format | ✅ | Updated to `PropertyValueSpecification` (Rich Results compatible) |
 | Legal terms domain | ✅ | References drsulochana.online |
+| Google Search Console verification meta | ✅ | `verification.google` in `src/app/layout.tsx` |
 
 ---
 
@@ -57,7 +58,7 @@ curl -s https://www.drsulochana.online/ | grep -o 'canonical[^>]*'
 1. Go to [Google Search Console](https://search.google.com/search-console)
 2. Add property: **URL prefix** → `https://www.drsulochana.online`
    - Or **Domain** property → `drsulochana.online` (requires DNS TXT verification)
-3. Verify ownership (HTML tag, DNS, or Google Analytics)
+3. **Verify ownership** — HTML meta tag is already in `src/app/layout.tsx` (deploy first, then click Verify)
 4. Submit sitemap: `https://www.drsulochana.online/sitemap.xml`
 5. **Request indexing** for:
 

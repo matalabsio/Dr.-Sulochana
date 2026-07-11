@@ -2,6 +2,7 @@
 export const brandNames = {
   primary: "Dr. Sulochana's Hospital",
   alternate: [
+    "Dr Sulochana",
     "Sulochana Hospital",
     "Dr Sulochana Hospital Madinaguda",
     "Dr Sulochana's Hospital Madinaguda",
@@ -12,6 +13,7 @@ export const brandNames = {
 
 export const keywordClusters = {
   brand: [
+    "dr sulochana",
     "dr sulochana hospital madinaguda",
     "dr sulochana's hospital",
     "sulochana hospital",
@@ -46,7 +48,7 @@ export const keywordClusters = {
 export const pageSeo = {
   home: {
     title:
-      "Dr. Sulochana's Hospital Madinaguda | Gynecologist in Hyderabad — IVF & Pregnancy Care",
+      "Dr. Sulochana Mortha | Gynecologist in Hyderabad — Sulochana Hospital Madinaguda",
     description:
       "Sulochana Hospital in Madinaguda, Hyderabad — Dr. Sulochana Mortha, experienced gynecologist and fertility specialist. IVF, pregnancy care, PCOS, and women's health. Book a consultation.",
   },
