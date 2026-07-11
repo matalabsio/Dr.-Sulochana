@@ -9,7 +9,6 @@ import {
   Users,
 } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import BrandLogo from "@/components/brand/BrandLogo";
 import { trustStory as trustStoryBase } from "@/content/landing";
 import { useMessages } from "@/i18n/LanguageProvider";
 
@@ -26,7 +25,7 @@ export default function TrustStorySection() {
     common.patientSatisfaction,
   ];
 
-  const { mission, trustCards, pillars, partners } = useMemo(
+  const { mission, trustCards, pillars } = useMemo(
     () => ({
       ...trustStoryBase,
       mission: {
@@ -47,10 +46,6 @@ export default function TrustStorySection() {
         title: t.pillars[i]?.title ?? pillar.title,
         desc: t.pillars[i]?.desc ?? pillar.desc,
       })),
-      partners: {
-        ...trustStoryBase.partners,
-        title: t.partnersTitle,
-      },
     }),
     [t, metricLabels],
   );
@@ -146,36 +141,6 @@ export default function TrustStorySection() {
                   </article>
                 ))}
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section
-        className="trust-story-partners relative"
-        aria-label="Trusted partners"
-      >
-        <div className="trust-partners-inner relative z-10 mx-auto max-w-container px-4 sm:px-6 lg:px-12">
-          <ScrollReveal y={24} duration={0.85}>
-            <div className="trust-partners-top">
-              <div className="trust-partners-brand">
-                <BrandLogo variant="onDark" className="trust-partners-logo" />
-              </div>
-              <h3 className="trust-partners-heading">{partners.title}</h3>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal
-            staggerSelector="[data-partner]"
-            stagger={0.06}
-            y={16}
-            duration={0.75}
-          >
-            <div className="trust-partners-row">
-              {partners.items.map((name) => (
-                <span key={name} data-partner className="trust-partner-logo">
-                  {name}
-                </span>
-              ))}
             </div>
           </ScrollReveal>
         </div>

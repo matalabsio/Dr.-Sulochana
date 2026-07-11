@@ -68,7 +68,6 @@ export type SiteMessages = {
     aboutBadge: string;
     aboutTitle: string;
     aboutBody: string;
-    partnersTitle: string;
     pillars: { title: string; desc: string }[];
     expertise: { title: string; desc: string }[];
   };

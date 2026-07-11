@@ -41,14 +41,6 @@ export const landingSuccessRate = {
   label: "Patient Satisfaction",
 } as const;
 
-export const landingPartners = [
-  "Hyderabad OBGYN Network",
-  "Fertility Care Alliance",
-  "Women's Health India",
-  "Madinaguda Medical Assoc.",
-  "IVF Support Partners",
-] as const;
-
 /** Unified trust / about storytelling section */
 export const trustStory = {
   mission: {
@@ -128,10 +120,6 @@ export const trustStory = {
     { value: 98, suffix: "%", label: "Patient Satisfaction", numeric: true },
     { value: 4, suffix: "", label: "Core Specialties", numeric: true },
   ],
-  partners: {
-    title: "Trusted & Recognized By Leading Healthcare Organizations",
-    items: landingPartners,
-  },
 } as const;
 
 export const landingPillars = [

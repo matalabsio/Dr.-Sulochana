@@ -70,7 +70,6 @@ export const en: SiteMessages = {
     aboutTitle: "Healthcare Built on Trust and Understanding",
     aboutBody:
       "At Dr. Sulochana\u2019s Hospital, Madinaguda, we combine four decades of women\u2019s healthcare with compassionate, evidence-based treatment. \"I believe in delivering empathetic, patient-centric healthcare within a supportive, informative environment—treating every patient with the dedicated care I would offer my own family.\" — Dr. M. Sulochana Mortha",
-    partnersTitle: "Trusted & Recognized By Leading Healthcare Organizations",
     pillars: [
       {
         title: "40 Years of Fertility Practice",
