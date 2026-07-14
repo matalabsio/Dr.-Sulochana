@@ -300,7 +300,7 @@ export const en: SiteMessages = {
     items: [
       {
         q: "What is the cost of IVF at Dr. Sulochana's Hospital?",
-        a: "Our IVF packages start from ₹[X] and are designed to be accessible for middle-class families. All costs are explained transparently during your first consultation with no hidden charges.",
+        a: "Our IVF packages typically range from \u20b91,20,000 \u2013 \u20b92,00,000 per cycle and are designed to be accessible for middle-class families. All costs are explained transparently during your first consultation with no hidden charges.",
       },
       {
         q: "How many IVF cycles will I need?",
@@ -351,7 +351,7 @@ export const en: SiteMessages = {
       {
         name: "IVF Treatment",
         badge: "Most Popular",
-        price: "\u20b9[X]",
+        price: "\u20b91,20,000 \u2013 \u20b92,00,000",
         featured: true,
         features: [
           "Consultation & Fertility Evaluation",

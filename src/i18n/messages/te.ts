@@ -331,7 +331,7 @@ export const te: SiteMessages = {
       {
         name: "IVF Treatment",
         badge: "Most Popular",
-        price: "\u20b9[X]",
+        price: "\u20b91,20,000 \u2013 \u20b92,00,000",
         featured: true,
         features: [
           "Consultation & Fertility Evaluation",
