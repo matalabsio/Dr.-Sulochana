@@ -47,11 +47,11 @@ export const hi: SiteMessages = {
   },
   hero: {
     trustBadge: "Dr. Sulochana's Hospital \u2022 Madinaguda, Hyderabad",
-    headlineLine1: "हैदराबाद में विश्वसनीय",
-    headlineLine2: "आईवीएफ और प्रजनन",
-    headlineLine3Lead: "देखभाल —",
-    headlineLine3Tail: " हर परिवार",
-    headlineLine4: "की यात्रा के लिए",
+    headlineLine1: "डॉ. सुलोचना मोर्था",
+    headlineLine2: "स्त्री रोग विशेषज्ञ,",
+    headlineLine3Lead: "प्रसूति",
+    headlineLine3Tail: " एवं आईवीएफ",
+    headlineLine4: "विशेषज्ञ · हैदराबाद",
     subtitle:
       "डॉ. सुलोचना के अस्पताल, मादीनागुड़ा में किफायती प्रजनन उपचार। आईवीएफ, आईयूआई, आईसीएसआई और उच्च जोखिम गर्भावस्था देखभाल में 40 वर्षों का नैदानिक अनुभव।",
     primaryCta: "अपॉइंटमेंट बुक करें",

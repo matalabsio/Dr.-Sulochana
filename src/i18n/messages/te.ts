@@ -47,11 +47,11 @@ export const te: SiteMessages = {
   },
   hero: {
     trustBadge: "Dr. Sulochana's Hospital \u2022 Madinaguda, Hyderabad",
-    headlineLine1: "హైదరాబాద్‌లో నమ్మకమైన",
-    headlineLine2: "ఐవీఎఫ్ & సంతానోత్పత్తి",
-    headlineLine3Lead: "సంరక్షణ —",
-    headlineLine3Tail: " ప్రతి కుటుంబ",
-    headlineLine4: "ప్రయాణానికి",
+    headlineLine1: "డాక్టర్ సులోచన మోర్తా",
+    headlineLine2: "స్త్రీరోగ వైద్యురాలు,",
+    headlineLine3Lead: "ప్రసూతి",
+    headlineLine3Tail: " & IVF",
+    headlineLine4: "నిపుణురాలు · హైదరాబాద్",
     subtitle:
       "డాక్టర్ సులోచన ఆసుపత్రి, మాదినాగుడాలో ప్రతి కుటుంబానికి అందుబాటులో ఉండే సంతానోత్పత్తి చికిత్స. IVF, IUI, ICSI మరియు అధిక ప్రమాద గర్భధారణ సంరక్షణలో 40 సంవత్సరాల క్లినికల్ అనుభవం.",
     primaryCta: "అపాయింట్‌మెంట్ బుక్ చేయండి",

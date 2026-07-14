@@ -233,5 +233,11 @@ export function buildMedicalClinicSchema(options?: { pagePath?: string }) {
       addressCountry: "IN",
     },
     medicalSpecialty: [...doctor.specialties],
+    employee: {
+      "@type": "Physician",
+      name: doctor.name,
+      url: absoluteUrl("/about"),
+      medicalSpecialty: [...doctor.specialties],
+    },
   };
 }

@@ -16,6 +16,7 @@ import { en } from "@/i18n/messages/en";
 import {
   buildFaqSchema,
   buildMedicalClinicSchema,
+  buildPhysicianSchema,
   buildWebSiteSchema,
   compactSchema,
 } from "@/lib/seo/schema";
@@ -23,6 +24,7 @@ import {
 /** Homepage layout aligned to Figma frame 42:11 (vamshi-MATA) */
 export default function Page() {
   const schema = compactSchema([
+    buildPhysicianSchema(),
     buildMedicalClinicSchema(),
     buildWebSiteSchema(),
     buildFaqSchema(en.faq.items),
