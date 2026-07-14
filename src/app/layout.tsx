@@ -13,7 +13,6 @@ import AnimationProvider from "@/components/AnimationProvider";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { assetPaths } from "@/content/images";
 import { pageSeo } from "@/lib/seo/keywords";
 import { getSiteUrl, siteConfig } from "@/lib/seo/site";
 import "./globals.css";
@@ -30,14 +29,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: assetPaths.brand.favicon, type: "image/svg+xml" },
-      { url: assetPaths.brand.faviconIco, sizes: "any" },
-      { url: "/icon", sizes: "32x32", type: "image/png" },
-      { url: assetPaths.brand.icon192, sizes: "192x192", type: "image/png" },
-      { url: assetPaths.brand.icon512, sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: [{ url: assetPaths.brand.faviconIco }],
-    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    shortcut: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   applicationName: siteConfig.shortName,
