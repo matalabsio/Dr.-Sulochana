@@ -41,6 +41,8 @@ export const siteConfig = {
   alternateNames: brandNames.alternate,
   description: pageSeo.home.description,
   defaultOgImage: images.pregnantCouple,
+  /** Square brand mark for Google / Knowledge Graph logo */
+  searchLogo: images.brand.searchLogo,
   locale: "en_IN",
   phone: contactPage.contactInfo.phone,
   phoneHref: contactPage.contactInfo.phoneHref,

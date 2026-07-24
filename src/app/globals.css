@@ -10341,7 +10341,7 @@ html.locale-en .knowledge-page-title {
   }
 }
 
-/* Brand logo — public/brand/logo.png (white on black) */
+/* Brand logo — public/brand/logo.png (white on transparent) */
 .brand-logo-img {
   display: block;
   flex-shrink: 0;
@@ -10354,35 +10354,38 @@ html.locale-en .knowledge-page-title {
 }
 
 .brand-logo-img--nav {
-  height: 3.25rem;
+  height: 2.75rem;
   width: auto;
-  max-width: min(12rem, 40vw);
+  max-width: min(15rem, 58vw);
 }
 
 @media (min-width: 640px) {
   .brand-logo-img--nav {
-    height: 3.375rem;
-    max-width: 13.5rem;
+    height: 3.125rem;
+    max-width: 17rem;
   }
 }
 
 @media (min-width: 1024px) {
   .brand-logo-img--nav {
-    height: 3.5rem;
-    max-width: 15rem;
+    height: 3.375rem;
+    max-width: 18.5rem;
   }
 }
 
+/* White lockup on dark plum nav — no blend (purple source was invisible) */
 .brand-logo-img--on-dark {
-  mix-blend-mode: lighten;
-  filter: contrast(1.08) brightness(1.05);
+  mix-blend-mode: normal;
+  filter: none;
+  opacity: 1;
 }
 
 .brand-logo {
   display: block;
   flex-shrink: 0;
-  width: 11rem;
-  height: 8.15rem;
+  width: 15rem;
+  aspect-ratio: 417 / 139;
+  height: auto;
   background-color: var(--brand-primary);
   mask-image: url("/brand/logo.png");
   mask-size: contain;
@@ -11211,8 +11214,8 @@ html.locale-en .knowledge-page-title {
 .brand-logo-img--pre-footer {
   width: auto;
   height: auto;
-  max-width: min(100%, 15.625rem); /* ~250px */
-  max-height: 11.1875rem; /* ~179px */
+  max-width: min(100%, 17.5rem);
+  max-height: 6rem;
 }
 
 .conversion-journey-cta-actions {

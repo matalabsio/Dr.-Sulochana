@@ -85,6 +85,12 @@ export function buildWebSiteSchema() {
       "@type": "Organization",
       name: siteConfig.name,
       url: absoluteUrl("/"),
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl(siteConfig.searchLogo),
+        width: 512,
+        height: 512,
+      },
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -127,7 +133,9 @@ export function buildArticleSchema(input: {
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl(siteConfig.defaultOgImage),
+        url: absoluteUrl(siteConfig.searchLogo),
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: absoluteUrl(input.path),
@@ -183,7 +191,7 @@ export function buildPhysicianSchema() {
     name: doctor.name,
     alternateName: ["Dr Sulochana", "Dr M Sulochana Mortha", "Dr Sulochana Mortha"],
     url: absoluteUrl("/about"),
-    image: absoluteUrl(images.pregnantCouple),
+    image: absoluteUrl(siteConfig.searchLogo),
     telephone: siteConfig.phone,
     medicalSpecialty: [...doctor.specialties],
     knowsAbout: [...doctor.specialties],
@@ -213,6 +221,12 @@ export function buildMedicalClinicSchema(options?: { pagePath?: string }) {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: absoluteUrl(images.pregnantCouple),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl(siteConfig.searchLogo),
+      width: 512,
+      height: 512,
+    },
     sameAs: ORGANIZATION_SAME_AS,
     areaServed: siteConfig.areaServed.map((place) => ({
       "@type": "Place",
