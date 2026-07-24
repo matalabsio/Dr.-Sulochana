@@ -51,16 +51,44 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, must-revalidate",
           },
         ],
       },
       {
+        // Brand assets change in place (logo/favicons) — do not immutable-cache for a year
         source: "/brand/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=0, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/apple-touch-icon.png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/android-chrome-:size.png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/favicon-32x32.png",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
           },
         ],
       },

@@ -10387,11 +10387,11 @@ html.locale-en .knowledge-page-title {
   aspect-ratio: 417 / 139;
   height: auto;
   background-color: var(--brand-primary);
-  mask-image: url("/brand/logo.png");
+  mask-image: url("/brand/logo.png?v=20260724");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: left center;
-  -webkit-mask-image: url("/brand/logo.png");
+  -webkit-mask-image: url("/brand/logo.png?v=20260724");
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;

@@ -12,15 +12,15 @@
 /** Public URL paths (served from /public) */
 export const assetPaths = {
   brand: {
-    logo: "/brand/logo.png",
+    logo: "/brand/logo.png?v=20260724",
     favMark: "/brand/fav.png",
     favicon: "/brand/favicon.svg",
     faviconIco: "/favicon.ico",
-    icon32: "/brand/icon-32.png",
-    icon192: "/brand/icon-192.png",
-    icon512: "/brand/icon-512.png",
-    appleTouchIcon: "/brand/apple-touch-icon.png",
-    searchLogo: "/android-chrome-512x512.png",
+    icon32: "/brand/icon-32.png?v=20260724",
+    icon192: "/brand/icon-192.png?v=20260724",
+    icon512: "/brand/icon-512.png?v=20260724",
+    appleTouchIcon: "/brand/apple-touch-icon.png?v=20260724",
+    searchLogo: "/android-chrome-512x512.png?v=20260724",
   },
   illustrations: {
     pregnantCouple: "/illustrations/pregnant-couple.png",
